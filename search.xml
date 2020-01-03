@@ -1,0 +1,799 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>Surface GO 使用U盘驱动器 初始化 安装 恢复 Windows 10操作系统</title>
+      <link href="/2019/11/06/"/>
+      <url>/2019/11/06/</url>
+      
+        <content type="html"><![CDATA[<h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><p><strong>说真的，网上很多教程都是错的！</strong></p><ul><li>有的说直接使用msdn最新Win10镜像的，这个我试了。需要自己解决激活问题，并且网上清一色的用三方PE，几乎没有msdn原版安装！</li><li>有的推荐使用Ghost安装各种国产封装的，这个不解释了。</li><li>淘宝也有给出付费教程和下载链接的，然而镜像SHA1和微软官方对不上，最起码到今天（2019/11/05）对不上！</li></ul><p><strong>msdn原版iso镜像与Surface官方zip压缩包的区别：</strong></p><ul><li>msdn原版iso镜像可以安装的版本众多，Surface官方zip压缩包是家庭版</li><li>Surface官方zip压缩包的系统可以直接激活</li><li>Surface官方zip压缩包的系统内置office 2016，但是需要另外激活</li></ul><p><strong>这篇文章旨在分享：</strong></p><ul><li>下载原味的系统镜像</li><li>制作和使用启动恢复驱动器/系统安装U盘</li></ul><a id="more"></a><h1 id="正文开始"><a href="#正文开始" class="headerlink" title="正文开始"></a>正文开始</h1><h2 id="使用msdn原版iso镜像安装"><a href="#使用msdn原版iso镜像安装" class="headerlink" title="使用msdn原版iso镜像安装"></a>使用msdn原版iso镜像安装</h2><p>这个非常简单，安装教程网上一搜很多，简单说一下</p><ul><li>下载iso文件</li><li>使用Rufus制作系统安装U盘</li><li>开机的时候按住音量+，进入BIOS，关闭Security Boot</li></ul><p>然后启动安装即可。</p><h2 id="使用surface官方zip压缩包安装"><a href="#使用surface官方zip压缩包安装" class="headerlink" title="使用surface官方zip压缩包安装"></a>使用surface官方zip压缩包安装</h2><h3 id="下载恢复镜像"><a href="#下载恢复镜像" class="headerlink" title="下载恢复镜像"></a>下载恢复镜像</h3><p>官网下载地址 <a href="https://support.microsoft.com/zh-cn/surfacerecoveryimage" target="_blank" rel="noopener">https://support.microsoft.com/zh-cn/surfacerecoveryimage</a></p><p>选择产品、输入序列号之后，就可以进行下载。</p><p>我的设备是<strong>Surface GO 8G 128G</strong>， 截止到今天（2019/11/05），官网给出的最新镜像是：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Surface Go - 128GB 4415Y 8GB M1824 - Windows 10 Home in S Mode Version 1809</span><br></pre></td></tr></table></figure><p>你可以直接下载，或者尝试我的百度云链接：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">链接: https:&#x2F;&#x2F;pan.baidu.com&#x2F;s&#x2F;1MPa73sC9PkCMrxAdVol7dA 提取码: 9yvf</span><br></pre></td></tr></table></figure><p><strong>SurfaceGo_BMR_41_2.001.2.zip</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">MD5: 50C49BF7AFF0460357BD3477DB6460EA</span><br><span class="line">SHA1: 1E0174AAC7F39650140A1B93928339D6D307DCE0</span><br><span class="line">CRC32: 72832571</span><br></pre></td></tr></table></figure><p>你需要准备的，除了系统安装镜像，还有一个大于等于8G（强烈推荐16G及以上！）的U盘。</p><h3 id="制作“启动恢复U盘”"><a href="#制作“启动恢复U盘”" class="headerlink" title="制作“启动恢复U盘”"></a>制作“启动恢复U盘”</h3><p>参考官网的方法：<a href="https://support.microsoft.com/en-us/help/4026852/windows-create-a-recovery-drive" target="_blank" rel="noopener">https://support.microsoft.com/en-us/help/4026852/windows-create-a-recovery-drive</a></p><ol><li>使用Windows的任务栏搜索“恢复驱动器/Create a recovery drive”，打开应用。</li><li>取消默认勾选的“将系统文件备份到恢复驱动器”</li><li>选择你的U盘，确认风险提示，等待“恢复驱动器已就绪”的提示</li><li>将下载好的.zip压缩文件解压到U盘根目录，如果提示覆盖，那就覆盖。</li></ol><h3 id="恢复原始系统"><a href="#恢复原始系统" class="headerlink" title="恢复原始系统"></a>恢复原始系统</h3><ul><li><p>以下二选一</p><ul><li>设备彻底关机，按住“音量+”，短按电源，出现Logo就可以松手等待，进入Bios，选择启动顺序，也就是把USB移到最前面。</li><li>“开始菜单” -&gt; “设置” -&gt; “系统和安全” -&gt; “恢复” -&gt; “高级启动”，然后选择“使用设备”</li></ul></li><li><p>进入“选择一个选项”页面，不要选择“使用设备”，选择“疑难解答”或者“高级选项”-&gt;“从驱动器恢复”</p></li><li><p>然后一步一步按照自己的需要，根据提示操作就得了！我选择的是“完全清理驱动器”-&gt;“恢复”</p></li></ul><h2 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h2><h3 id="什么是“S-Mode”？"><a href="#什么是“S-Mode”？" class="headerlink" title="什么是“S Mode”？"></a>什么是“S Mode”？</h3><p>简单的说，S Mode是一种限制了部分种类的软件安装和运行的使用模式，限制带来的好处就是“安全性”、“省电”、“稳定”之类的，就好比“开放的Android”和“封闭的iOS”。千万不要认为这个是所谓的“大平板”模式、不能具有传统桌面，有的！</p><h3 id="如何破除“S-Mode”的限制？"><a href="#如何破除“S-Mode”的限制？" class="headerlink" title="如何破除“S Mode”的限制？"></a>如何破除“S Mode”的限制？</h3><p>运行部分软件，例如运行CMD之类，会提示“出于安全和性能方面的原因，此Windows模式只运行Microsoft Store中经过验证的应用”，点击“查看操作方法”，会来到Microsoft Store中，然后点击“获取”来退出安全模式。</p><h3 id="如何还原？"><a href="#如何还原？" class="headerlink" title="如何还原？"></a>如何还原？</h3><p>使用“启动恢复U盘”删除所有！</p><h3 id="为什么要用这个定制版的Windows-10-Home？"><a href="#为什么要用这个定制版的Windows-10-Home？" class="headerlink" title="为什么要用这个定制版的Windows 10 Home？"></a>为什么要用这个定制版的Windows 10 Home？</h3><ol><li>孱弱的处理器和Surface的产品定位，谁都不愿意你在这个工具上尝试“工作站”的角色，“Home”版已然足够并且最适合。</li><li>自带Office 2016</li></ol><h3 id="还有要说的吗？"><a href="#还有要说的吗？" class="headerlink" title="还有要说的吗？"></a>还有要说的吗？</h3><p>强烈建议安装完成之后：</p><ol><li>使用系统自带的“开始菜单” -&gt; “设置” -&gt; “系统和安全”更新最新系统，我经过N次更新和重启，已经升级到最新的1903了（当然，这个是截止到今天最新，而且我也不知道为啥微软没有放出下载链接，如果有，请提醒我）。</li><li>更新完毕之后，（推荐）设置搜索“存储” -&gt; “临时文件”或者<a href="https://www.chuyu.me/zh-Hans/index.html" target="_blank" rel="noopener">Dism++</a>清理没用的文件。</li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> Machine/机器 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Win10 </tag>
+            
+            <tag> Surface </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Windows下利用cwRsync同步Linux源并排除目录</title>
+      <link href="/2019/04/22/"/>
+      <url>/2019/04/22/</url>
+      
+        <content type="html"><![CDATA[<p>接触Linux的开发者一定知道国内源的意义是啥。</p><p>本文的目的是想要在本地建立一个Linux的源，同时排除老旧的版本。为方便起见，本文使用CentOS为例，使用了<a href="https://mirrors.tuna.tsinghua.edu.cn/" target="_blank" rel="noopener">清华大学的源</a>做为数据来源。</p><a id="more"></a><h2 id="下载软件"><a href="#下载软件" class="headerlink" title="下载软件"></a>下载软件</h2><p>本例使用的是cwRsync这个软件，仅使用客户端即可。搜索引擎说<a href="https://www.itefix.net/cwrsync" target="_blank" rel="noopener">官网</a>有免费版下载，然而我并没有找到。</p><p>没办法拿到官网最新的下载，退而求其次，搜索到<a href="/git-static/software/windows/cwRsync-v5.5.0.zip">v5.5.0</a>这个版本。如果你能找到新版或者弄出来官网下载连接，请联系我，非常感谢！</p><h2 id="软件使用"><a href="#软件使用" class="headerlink" title="软件使用"></a>软件使用</h2><ol><li>下载好软件，解压到你喜欢到地方，我解压到了 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C:\cwRsync</span><br></pre></td></tr></table></figure></li><li>建立排除文件<br>我是在C:\cwRsync下建立了centos_excluded文件 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line">2</span><br><span class="line">2.1&#x2F;</span><br><span class="line">3</span><br><span class="line">3.1</span><br><span class="line">3.3</span><br><span class="line">3.4</span><br><span class="line">3.5</span><br><span class="line">3.6</span><br><span class="line">3.7</span><br><span class="line">3.8</span><br><span class="line">3.9&#x2F;</span><br><span class="line">4</span><br><span class="line">4.0&#x2F;</span><br><span class="line">4.1&#x2F;</span><br><span class="line">4.2&#x2F;</span><br><span class="line">4.3&#x2F;</span><br><span class="line">4.4&#x2F;</span><br><span class="line">4.5&#x2F;</span><br><span class="line">4.6&#x2F;</span><br><span class="line">4.7&#x2F;</span><br><span class="line">4.8&#x2F;</span><br><span class="line">4.9&#x2F;</span><br><span class="line">5</span><br><span class="line">5.0&#x2F;</span><br><span class="line">5.1&#x2F;</span><br><span class="line">5.10&#x2F;</span><br><span class="line">5.11&#x2F;</span><br><span class="line">5.2&#x2F;</span><br><span class="line">5.3&#x2F;</span><br><span class="line">5.4&#x2F;</span><br><span class="line">5.5&#x2F;</span><br><span class="line">5.6&#x2F;</span><br><span class="line">5.7&#x2F;</span><br><span class="line">5.8&#x2F;</span><br><span class="line">5.9&#x2F;</span><br><span class="line">6</span><br><span class="line">6.0&#x2F;</span><br><span class="line">6.1&#x2F;</span><br><span class="line">6.10&#x2F;</span><br><span class="line">6.2&#x2F;</span><br><span class="line">6.3&#x2F;</span><br><span class="line">6.4&#x2F;</span><br><span class="line">6.5&#x2F;</span><br><span class="line">6.6&#x2F;</span><br><span class="line">6.7&#x2F;</span><br><span class="line">6.8&#x2F;</span><br><span class="line">6.9&#x2F;</span><br><span class="line">7</span><br><span class="line">7.0.1406&#x2F;</span><br><span class="line">7.1.1503&#x2F;</span><br><span class="line">7.2.1511&#x2F;</span><br><span class="line">7.3.1611&#x2F;</span><br><span class="line">7.4.1708&#x2F;</span><br><span class="line">7.5.1804&#x2F;</span><br><span class="line">RPM-GPG-KEY-CentOS-3</span><br><span class="line">RPM-GPG-KEY-CentOS-4</span><br><span class="line">RPM-GPG-KEY-CentOS-5</span><br><span class="line">RPM-GPG-KEY-CentOS-6</span><br><span class="line">RPM-GPG-KEY-CentOS-Debug-6</span><br><span class="line">RPM-GPG-KEY-CentOS-Security-6</span><br><span class="line">RPM-GPG-KEY-CentOS-Testing-6</span><br><span class="line">RPM-GPG-KEY-centos4</span><br></pre></td></tr></table></figure></li><li>使用定时任务运行脚本</li></ol><p>创建脚本文件：mirrors.bat</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">@echo off</span><br><span class="line"></span><br><span class="line">C:\cwRsync\bin\rsync -alz --exclude-from&#x3D;&#x2F;cygdrive&#x2F;c&#x2F;cwRsync&#x2F;centos_excluded rsync:&#x2F;&#x2F;mirrors.tuna.tsinghua.edu.cn&#x2F;centos&#x2F; &#x2F;cygdrive&#x2F;d&#x2F;www&#x2F;mirrors&#x2F;centos&#x2F;</span><br><span class="line"></span><br><span class="line">mklink &#x2F;D D:\www\mirrors\centos\7 D:\www\mirrors\centos\7.6.1810</span><br></pre></td></tr></table></figure><p>然后利用Windows系统的。”计划任务”进行定时重复检查同步，当然了，你还需要一个Http服务器，这个网上一大堆，各种个样的实现方法，我就不复制粘贴了。</p><ol start="4"><li>配置客户端<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">mv &#x2F;etc&#x2F;yum.repos.d&#x2F;CentOS-Base.repo &#x2F;etc&#x2F;yum.repos.d&#x2F;CentOS-Base.repo.bak</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">cat &lt;&lt;EOF &gt;&gt; &#x2F;etc&#x2F;yum.repos.d&#x2F;CentOS-Base.repo</span><br><span class="line">[base]</span><br><span class="line">name&#x3D;CentOS-$releasever - Base</span><br><span class="line">baseurl&#x3D;http:&#x2F;&#x2F;192.168.1.80&#x2F;mirrors&#x2F;centos&#x2F;$releasever&#x2F;os&#x2F;$basearch&#x2F;</span><br><span class="line">#mirrorlist&#x3D;http:&#x2F;&#x2F;mirrorlist.centos.org&#x2F;?release&#x3D;$releasever&amp;arch&#x3D;$basearch&amp;repo&#x3D;os</span><br><span class="line">gpgcheck&#x3D;1</span><br><span class="line">gpgkey&#x3D;file:&#x2F;&#x2F;&#x2F;etc&#x2F;pki&#x2F;rpm-gpg&#x2F;RPM-GPG-KEY-CentOS-7</span><br><span class="line"></span><br><span class="line">#released updates</span><br><span class="line">[updates]</span><br><span class="line">name&#x3D;CentOS-$releasever - Updates</span><br><span class="line">baseurl&#x3D;http:&#x2F;&#x2F;192.168.1.80&#x2F;mirrors&#x2F;centos&#x2F;$releasever&#x2F;updates&#x2F;$basearch&#x2F;</span><br><span class="line">#mirrorlist&#x3D;http:&#x2F;&#x2F;mirrorlist.centos.org&#x2F;?release&#x3D;$releasever&amp;arch&#x3D;$basearch&amp;repo&#x3D;updates</span><br><span class="line">gpgcheck&#x3D;1</span><br><span class="line">gpgkey&#x3D;file:&#x2F;&#x2F;&#x2F;etc&#x2F;pki&#x2F;rpm-gpg&#x2F;RPM-GPG-KEY-CentOS-7</span><br><span class="line"></span><br><span class="line">#additional packages that may be useful</span><br><span class="line">[extras]</span><br><span class="line">name&#x3D;CentOS-$releasever - Extras</span><br><span class="line">baseurl&#x3D;http:&#x2F;&#x2F;192.168.1.80&#x2F;mirrors&#x2F;centos&#x2F;$releasever&#x2F;extras&#x2F;$basearch&#x2F;</span><br><span class="line">#mirrorlist&#x3D;http:&#x2F;&#x2F;mirrorlist.centos.org&#x2F;?release&#x3D;$releasever&amp;arch&#x3D;$basearch&amp;repo&#x3D;extras</span><br><span class="line">gpgcheck&#x3D;1</span><br><span class="line">gpgkey&#x3D;file:&#x2F;&#x2F;&#x2F;etc&#x2F;pki&#x2F;rpm-gpg&#x2F;RPM-GPG-KEY-CentOS-7</span><br><span class="line"></span><br><span class="line">#additional packages that extend functionality of existing packages</span><br><span class="line">[centosplus]</span><br><span class="line">name&#x3D;CentOS-$releasever - Plus</span><br><span class="line">baseurl&#x3D;http:&#x2F;&#x2F;192.168.1.80&#x2F;mirrors&#x2F;centos&#x2F;$releasever&#x2F;centosplus&#x2F;$basearch&#x2F;</span><br><span class="line">#mirrorlist&#x3D;http:&#x2F;&#x2F;mirrorlist.centos.org&#x2F;?release&#x3D;$releasever&amp;arch&#x3D;$basearch&amp;repo&#x3D;centosplus</span><br><span class="line">gpgcheck&#x3D;1</span><br><span class="line">enabled&#x3D;0</span><br><span class="line">gpgkey&#x3D;file:&#x2F;&#x2F;&#x2F;etc&#x2F;pki&#x2F;rpm-gpg&#x2F;RPM-GPG-KEY-CentOS-7</span><br><span class="line">EOF</span><br></pre></td></tr></table></figure></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> Windows </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Windows </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Android-APK瘦身技术 减小软件安装包体积</title>
+      <link href="/2019/03/07/"/>
+      <url>/2019/03/07/</url>
+      
+        <content type="html"><![CDATA[<p>原文：<a href="https://blog.csdn.net/Peterpan1223/article/details/67653792" target="_blank" rel="noopener">https://blog.csdn.net/Peterpan1223/article/details/67653792</a></p><a id="more"></a><h1 id="辅助分析工具"><a href="#辅助分析工具" class="headerlink" title="辅助分析工具"></a>辅助分析工具</h1><p>在线网站：<a href="https://nimbledroid.com/" target="_blank" rel="noopener">https://nimbledroid.com/</a></p><p>能够得知app内存使用，网络使用，磁盘输入/输出，文件大小等一些数据</p><ul><li>无需翻墙，但是访问比较慢</li><li>需要注册</li></ul><h1 id="apk的组成"><a href="#apk的组成" class="headerlink" title="apk的组成"></a>apk的组成</h1><ul><li>classes.dex java源码编译后生成的java字节码文件</li><li>resources.arsc 编译后的布局文件</li><li>AndroidMainfest.xml</li><li>assets 目录，存放一些配置文件</li><li>lib 目录，子目录armebin存放的是一些so文件或者jar包</li><li>META-INF目录下存放的是签名信息，用来保证apk包的完整性和系统的安全</li><li>res apk图片资源</li></ul><h1 id="瘦身开始"><a href="#瘦身开始" class="headerlink" title="瘦身开始"></a>瘦身开始</h1><h2 id="1-开启minifyEnabled"><a href="#1-开启minifyEnabled" class="headerlink" title="1. 开启minifyEnabled"></a>1. 开启minifyEnabled</h2><ul><li>开启混淆</li><li>删除没用的类（文件）和方法</li><li>代码压缩</li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">buildTypes &#123;</span><br><span class="line">    ......</span><br><span class="line">    debug &#123;</span><br><span class="line">        minifyEnabled true</span><br><span class="line">        proguardFiles getDefaultProguardFile(&#39;proguard-android-optimize.txt&#39;), &#39;proguard-rules.pro&#39;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="混淆规则proguard使用注意"><a href="#混淆规则proguard使用注意" class="headerlink" title="混淆规则proguard使用注意"></a>混淆规则proguard使用注意</h3><ul><li><p>类型转换错误，使用Gson之类的需要注意</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-keepattributes Signature</span><br></pre></td></tr></table></figure></li><li><p>忽略警告</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-ignorewarnings</span><br></pre></td></tr></table></figure></li><li><p>webview中js和本地代码有叫交互，保持“桥梁类”不被混淆</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">-keepclassmembers  class  com.xxx.xxxx.xxxx.HuodongBeBindedToJS</span><br><span class="line">&#123;</span><br><span class="line">  public *;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li><li><p>第三方包不被混淆</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#-libraryjars &#x2F;libs&#x2F;core.jar</span><br><span class="line">-dontwarn com.google.zxing.**</span><br><span class="line">-keep class com.google.zxing.** &#123; *;&#125;</span><br></pre></td></tr></table></figure></li></ul><ul><li>常见第三方包<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">#zxing</span><br><span class="line">#-libraryjars &#x2F;libs&#x2F;core.jar</span><br><span class="line">-dontwarn com.google.zxing.**</span><br><span class="line">-keep class com.google.zxing.** &#123; *;&#125;</span><br><span class="line"></span><br><span class="line">#支付宝</span><br><span class="line">#-libraryjars &#x2F;libs&#x2F;alipay_sdk.jar</span><br><span class="line">-dontwarn com.alipay.android.app.**</span><br><span class="line">-keep class com.alipay.android.app.** &#123;*;&#125;</span><br><span class="line">#友盟</span><br><span class="line">#-libraryjars &#x2F;libs&#x2F;umeng_sdk.jar</span><br><span class="line">-dontwarn com.umeng.**</span><br><span class="line">-keep class com.umeng.** &#123; *;&#125;</span><br><span class="line">-keepclassmembers class * &#123;    public &lt;init&gt;(org.json.JSONObject); &#125;</span><br><span class="line">-keep public class com.hyx.maizuo.main.R$*&#123;     public static final int *; &#125;</span><br><span class="line">-keep public class com.umeng.fb.ui.ThreadView &#123; &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#百度地图</span><br><span class="line">#-libraryjars &#x2F;libs&#x2F;baidumapapi.jar</span><br><span class="line">-dontwarn com.baidu.mapapi.**</span><br><span class="line">-keep class com.baidu.mapapi.** &#123; *;&#125;</span><br><span class="line"></span><br><span class="line">#fastJson</span><br><span class="line">#-libraryjars &#x2F;libs&#x2F;fastjson-1.1.20.jar</span><br><span class="line">-dontwarn com.alibaba.fastjson.**</span><br><span class="line">-keep class com.alibaba.fastjson.** &#123; *;&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#微信</span><br><span class="line">#-libraryjars &#x2F;libs&#x2F;libammsdk.jar</span><br><span class="line">-dontwarn com.tencent.mm.sdk.**</span><br><span class="line">-keep class com.tencent.mm.sdk.** &#123;*;&#125;</span><br></pre></td></tr></table></figure>示例 proguard-rules.pro文件<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br></pre></td><td class="code"><pre><span class="line"># Add project specific ProGuard rules here.</span><br><span class="line"># By default, the flags in this file are appended to flags specified</span><br><span class="line"># in D:\ProgramFiles\Android\sdk&#x2F;tools&#x2F;proguard&#x2F;proguard-android.txt</span><br><span class="line"># You can edit the include path and order by changing the proguardFiles</span><br><span class="line"># directive in build.gradle.</span><br><span class="line">#</span><br><span class="line"># For more details, see</span><br><span class="line">#   http:&#x2F;&#x2F;developer.android.com&#x2F;guide&#x2F;developing&#x2F;tools&#x2F;proguard.html</span><br><span class="line"></span><br><span class="line"># Add any project specific keep options here:</span><br><span class="line"></span><br><span class="line"># js调用android方法：window.映射字符串.callPhone(参数)</span><br><span class="line"></span><br><span class="line"># If your project uses WebView with JS, uncomment the following</span><br><span class="line"># and specify the fully qualified class name to the JavaScript interface</span><br><span class="line"># class:</span><br><span class="line">#-keepclassmembers class fqcn.of.javascript.interface.for.webview &#123;</span><br><span class="line">#   public *;</span><br><span class="line">#&#125;</span><br><span class="line"></span><br><span class="line"># 配置代码混淆 默认生成</span><br><span class="line">-optimizationpasses 5          # 指定代码的压缩级别</span><br><span class="line">-dontusemixedcaseclassnames   # 是否使用大小写混合</span><br><span class="line">-dontpreverify           # 混淆时是否做预校验</span><br><span class="line">-verbose                # 混淆时是否记录日志</span><br><span class="line"></span><br><span class="line">-optimizations !code&#x2F;simplification&#x2F;arithmetic,!field&#x2F;*,!class&#x2F;merging&#x2F;*  # 混淆时所采用的算法</span><br><span class="line"></span><br><span class="line">-keep public class * extends android.app.Activity      # 保持哪些类不被混淆</span><br><span class="line">-keep public class * extends android.app.Application   # 保持哪些类不被混淆</span><br><span class="line">-keep public class * extends android.app.Service       # 保持哪些类不被混淆</span><br><span class="line">-keep public class * extends android.content.BroadcastReceiver  # 保持哪些类不被混淆</span><br><span class="line">-keep public class * extends android.content.ContentProvider    # 保持哪些类不被混淆</span><br><span class="line">-keep public class * extends android.app.backup.BackupAgentHelper # 保持哪些类不被混淆</span><br><span class="line">-keep public class * extends android.preference.Preference        # 保持哪些类不被混淆</span><br><span class="line">-keep public class com.android.vending.licensing.ILicensingService    # 保持哪些类不被混淆</span><br><span class="line"></span><br><span class="line">-keepclasseswithmembernames class * &#123;  # 保持 native 方法不被混淆</span><br><span class="line">    native &lt;methods&gt;;</span><br><span class="line">&#125;</span><br><span class="line">-keepclasseswithmembers class * &#123;   # 保持自定义控件类不被混淆</span><br><span class="line">    public &lt;init&gt;(android.content.Context, android.util.AttributeSet);</span><br><span class="line">&#125;</span><br><span class="line">-keepclasseswithmembers class * &#123;# 保持自定义控件类不被混淆</span><br><span class="line">    public &lt;init&gt;(android.content.Context, android.util.AttributeSet, int);</span><br><span class="line">&#125;</span><br><span class="line">-keepclassmembers class * extends android.app.Activity &#123; # 保持自定义控件类不被混淆</span><br><span class="line">    public void *(android.view.View);</span><br><span class="line">&#125;</span><br><span class="line">-keepclassmembers enum * &#123;     # 保持枚举 enum 类不被混淆</span><br><span class="line">    public static **[] values();</span><br><span class="line">    public static ** valueOf(java.lang.String);</span><br><span class="line">&#125;</span><br><span class="line">-keep class * implements android.os.Parcelable &#123; # 保持 Parcelable 不被混淆</span><br><span class="line">    public static final android.os.Parcelable$Creator *;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">#忽略警告</span><br><span class="line">-ignorewarnings</span><br><span class="line"></span><br><span class="line"># 保持属性不管</span><br><span class="line">-keepattributes Signature</span><br><span class="line"></span><br><span class="line"># 第三方jar包不混淆</span><br><span class="line">#zxing</span><br><span class="line">-dontwarn com.google.zxing.**</span><br><span class="line">-keep class com.google.zxing.** &#123; *;&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#gson</span><br><span class="line">-dontwarn com.google.gson.**</span><br><span class="line">-keep class com.google.gson.** &#123; *;&#125;</span><br><span class="line"></span><br><span class="line">#xutils</span><br><span class="line">-dontwarn com.lidroid.xutils.**</span><br><span class="line">-keep class com.lidroid.xutils.** &#123; *;&#125;</span><br><span class="line"></span><br><span class="line">#v4</span><br><span class="line">-dontwarn android.support.v4.**</span><br><span class="line">-keep class android.support.v4.** &#123; *;&#125;</span><br><span class="line"></span><br><span class="line">#v7</span><br><span class="line">-dontwarn android.support.v7.**</span><br><span class="line">-keep class android.support.v7.** &#123; *;&#125;</span><br><span class="line"></span><br><span class="line">#annotation</span><br><span class="line">-dontwarn android.support.annotation.**</span><br><span class="line">-keep class android.support.annotation.** &#123; *;&#125;</span><br><span class="line"></span><br><span class="line">-dontwarn android.net.**</span><br><span class="line">-keep class android.net.** &#123; *;&#125;</span><br><span class="line"></span><br><span class="line"># tencent</span><br><span class="line">-dontwarn com.tencent.**</span><br><span class="line">-keep class com.tencent.** &#123;*;&#125;</span><br><span class="line"></span><br><span class="line"># umeng</span><br><span class="line">-dontwarn com.umeng.socialize.**</span><br><span class="line">-keep class com.umeng.socialize.** &#123;*;&#125;</span><br><span class="line"></span><br><span class="line">-dontwarn org.apache.**</span><br><span class="line">-keep class org.apache.** &#123; *;&#125;</span><br><span class="line"></span><br><span class="line">-dontwarn com.android.internal.http.multipart.**</span><br><span class="line">-keep class com.android.internal.http.multipart.** &#123; *;&#125;</span><br><span class="line"></span><br><span class="line"># java bean不能混淆</span><br><span class="line">-keep class com.xiangmu.wyxw.Bean.** &#123;*;&#125;</span><br></pre></td></tr></table></figure></li></ul><h2 id="2-开启shrinkResources"><a href="#2-开启shrinkResources" class="headerlink" title="2. 开启shrinkResources"></a>2. 开启shrinkResources</h2><p>去除无用的资源，包括工程中临时展示的图片</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">debug &#123;</span><br><span class="line">    minifyEnabled true</span><br><span class="line">    shrinkResources true</span><br><span class="line">    proguardFiles getDefaultProguardFile(&#39;proguard-android.txt&#39;), &#39;proguard.cfg&#39;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="3-删除无用的语言资源"><a href="#3-删除无用的语言资源" class="headerlink" title="*3. 删除无用的语言资源"></a>*3. 删除无用的语言资源</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">defaultConfig &#123;</span><br><span class="line">    ...</span><br><span class="line">    resConfigs &quot;zh&quot;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> Android </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Android </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>使用adb不用root免解锁干掉Android预置应用</title>
+      <link href="/2019/01/19/"/>
+      <url>/2019/01/19/</url>
+      
+        <content type="html"><![CDATA[<p>虽然我日常使用还是Mac+iPad+iPhone，投入”电脑复制手机可以粘贴”的生态不可自拔，但是我还是很满意Android的。<br>早些年，也折腾过Root，后来厂家有了bootloader锁，也跟风弄过。</p><p>为了干掉Android常规办法卸载不了的预置应用。通常要找Root工具，还要纯净的，Recovery或者Root管理应用里面带广告是不能忍的。<br>为什么呢？我就是为了”减负”才搞系统应用的，当然不能去了狼引了虎。</p><p>然而现实是想要一个纯净的解锁工具太麻烦了，而且随着Android的更迭，这个过程也越来越繁琐，这也是我后来入坑iPhone的原因。</p><p>好啦，直入今天的主题吧，来聊一聊如何省掉以上的步骤，直接干掉系统预置应用。</p><a id="more"></a><h2 id="如何操作"><a href="#如何操作" class="headerlink" title="如何操作"></a>如何操作</h2><ol><li>手机打开开发者模式，一般是在关于手机里面连续点击版本号，如果不清楚，请百度”你的手机型号 + 如何打开开发者模式”。在开发者模式中选择”开启USB调试”，我一般还同时勾选”允许仅充电调试”；</li><li>我的电脑是有安装Android Studio开发环境的，其他情况请自行下载Adb或者安装Android SDK（内置了sdk工具）；</li><li>我的adb存放在”～/Library/Android/sdk/platform-tools”下，其他情况请自行定位，进入目录，执行： <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.&#x2F;adb shell</span><br></pre></td></tr></table></figure> 进入手机的shell环境</li><li>执行一下，输出手机的程序包名列表： <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pm list packages</span><br></pre></td></tr></table></figure> 也可以只输出系统预置命令，就是加一个参数”-s” <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pm list packages -s</span><br></pre></td></tr></table></figure> 其他参数意义请自行使用手册意义</li><li>最后，用指定包名的形式卸载： <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pm uninstall --user 0 $&#123;packageName&#125;</span><br></pre></td></tr></table></figure></li></ol><h2 id="补充说明的事："><a href="#补充说明的事：" class="headerlink" title="补充说明的事："></a>补充说明的事：</h2><ul><li>华为手机的abd默认为华为定制，需要进入工程模式选择Google模式才连得上：在拨号界面输入  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">*#*#2846579#*#*</span><br></pre></td></tr></table></figure>  可以进行选择；</li><li>这个方法在恢复出厂设置的时候会恢复已经删除的程序列表。</li><li>如果有安全需要，操作完成后建议你关闭调试、关闭开发者模式。</li></ul><h2 id="附上我的一台emui8-0的删除列表，仅做示例参考"><a href="#附上我的一台emui8-0的删除列表，仅做示例参考" class="headerlink" title="附上我的一台emui8.0的删除列表，仅做示例参考"></a>附上我的一台emui8.0的删除列表，仅做示例参考</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"># 华为视频</span><br><span class="line">pm uninstall --user 0 com.huawei.himovie</span><br><span class="line"></span><br><span class="line">pm uninstall --user 0 com.huawei.health</span><br><span class="line"></span><br><span class="line"># 华为钱包</span><br><span class="line">pm uninstall --user 0 com.huawei.wallet</span><br><span class="line"></span><br><span class="line"># 手表同步</span><br><span class="line">pm uninstall --user 0 com.huawei.watch.sync</span><br><span class="line"></span><br><span class="line"># 华为穿戴</span><br><span class="line">pm uninstall --user 0 com.huawei.bone</span><br><span class="line"></span><br><span class="line">pm uninstall --user 0 com.vmall.client</span><br><span class="line"></span><br><span class="line">pm uninstall --user 0 com.huawei.skytone</span><br><span class="line"></span><br><span class="line">pm uninstall --user 0 com.android.hwmirror</span><br><span class="line"></span><br><span class="line"># 驾驶模式</span><br><span class="line">pm uninstall --user 0 com.huawei.vdrive</span><br><span class="line"></span><br><span class="line">pm uninstall --user 0 com.huawei.fans</span><br><span class="line"></span><br><span class="line"># 语音助手</span><br><span class="line">pm uninstall --user 0 com.huawei.vassistant</span><br><span class="line"></span><br><span class="line"># 音乐</span><br><span class="line">pm uninstall --user 0 com.android.mediacenter</span><br><span class="line"></span><br><span class="line"># 会员服务</span><br><span class="line">pm uninstall --user 0 com.huawei.phoneservice</span><br><span class="line"></span><br><span class="line"># 浏览器，反正我是干掉了，用的via</span><br><span class="line">pm uninstall --user 0 com.android.browser</span><br><span class="line"></span><br><span class="line"># 查找我的手机</span><br><span class="line">pm uninstall --user 0 com.huawei.android.findmyphone</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> Android </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Android </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>常见路由器多级设置-路由器下面怎么再接一个路由器</title>
+      <link href="/2018/12/30/"/>
+      <url>/2018/12/30/</url>
+      
+        <content type="html"><![CDATA[<p>这个事情很古老，也总有亲友问，自己总结的文章，希望尽量简单的解决大部分问题。适用于一般家用路由器</p><a id="more"></a><h2 id="路由器下面接路由器，一般有2个方式"><a href="#路由器下面接路由器，一般有2个方式" class="headerlink" title="路由器下面接路由器，一般有2个方式"></a>路由器下面接路由器，一般有2个方式</h2><p>一般来说，所有的Lan口都是平等的，并无顺序区别，也就是说同一路由的Lan口都可以调换位置，而Lan与Wan不能。<br>本文中没有提及或者图示空的Lan口均可以接电脑或者其他网络设备；</p><ul><li><h3 id="路由下面设置次级路由为交换机；-推荐"><a href="#路由下面设置次级路由为交换机；-推荐" class="headerlink" title="路由下面设置次级路由为交换机；(推荐)"></a>路由下面设置次级路由为交换机；(推荐)</h3></li></ul><p>这种设置，为1个局域网，也就是A路由下面的电脑和B路由下面的电脑可以无缝实现文件共享或者打印机等；</p><p><img src="/git-static/images/2018/12/30/2.jpg" alt="次级交换机"></p><ol><li><p>A路由Wan口接网线，A路由设置好拨号上网，假设A路由的Lan口管理IP为192.168.1.1；</p></li><li><p>B路由更改Lan口管理IP为同网络保留IP（不容易被A路由的DHCP分配到的IP），比如192.168.1.250等，并且B路由关闭DHCP，设置好重启一下；</p></li><li><p>按图示，A路由Lan口一个接到B路由的Lan口。</p></li></ol><p>这种设置一般是小型网络，B路由当交换机用；</p><ul><li><h3 id="路由下面设置另外一个局域网路由；"><a href="#路由下面设置另外一个局域网路由；" class="headerlink" title="路由下面设置另外一个局域网路由；"></a>路由下面设置另外一个局域网路由；</h3></li></ul><p>这种设置，其实是2个局域网，也就是A路由下面的电脑和B路由下面的电脑不容易实现文件共享或者打印机等；</p><p><img src="/git-static/images/2018/12/30/3.jpg" alt="次级路由"></p><ol><li><p>A路由Wan口接网线，A路由设置好拨号上网，假设A路由的Lan口管理IP为192.168.1.1；</p></li><li><p>B路由更改Lan口管理IP为其他网段，比如192.168.2.1或者10.0.0.1等，并且B路由上网方式为自动获取IP，设置好重启一下；</p></li><li><p>按图示，A路由Lan口一个接到B路由的Wan口。</p></li></ol><p>这种设置一般用于大一些的网络环境，因为可以分配给设备的IP地址会很多，并且B路由参与转发，能分担A路由的负载；</p><h2 id="几个常见概念介绍"><a href="#几个常见概念介绍" class="headerlink" title="几个常见概念介绍"></a>几个常见概念介绍</h2><p><img src="/git-static/images/2018/12/30/1.jpg" alt="接口介绍"></p><p>一般路由器的接口，除了电源之外，最重要的是：</p><h4 id="Wan口：图中蓝色口"><a href="#Wan口：图中蓝色口" class="headerlink" title="Wan口：图中蓝色口"></a><strong>Wan口</strong>：图中蓝色口</h4><p>通常是1个，也有的有2个或者多个</p><h4 id="Lan口：图中黄色的口"><a href="#Lan口：图中黄色的口" class="headerlink" title="Lan口：图中黄色的口"></a><strong>Lan口</strong>：图中黄色的口</h4><p>一般是4个，也有2个或者其他数量的</p><h4 id="DHCP：简单说是给所属设备（电脑或者连接的手机）分配IP的服务。"><a href="#DHCP：简单说是给所属设备（电脑或者连接的手机）分配IP的服务。" class="headerlink" title="DHCP：简单说是给所属设备（电脑或者连接的手机）分配IP的服务。"></a><strong>DHCP</strong>：简单说是给所属设备（电脑或者连接的手机）分配IP的服务。</h4><p>一般是由小到大的，比如路由器IP为192.168.1.1，那么默认分布是从192.168.1.2开始，最大到192.168.1.255。<br>大部分路由可以设定分配IP区间，比如只分配192.168.1.100-192.168.1.200</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Machine/机器 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 路由器 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>最近的败家-钢笔及钢笔的打磨</title>
+      <link href="/2018/12/29/"/>
+      <url>/2018/12/29/</url>
+      
+        <content type="html"><![CDATA[<p>我也没有收藏癖好，办公和考试也是拿着中性笔。我只是单纯的喜欢钢笔的那种仪式感，单纯的喜欢而已。</p><a id="more"></a><h3 id="购物清单"><a href="#购物清单" class="headerlink" title="购物清单"></a>购物清单</h3><p>先不上图了，有需要或者有时间再上吧。以下按照购买顺序由早到晚。</p><ul><li>凌美 狩猎者 EF尖 1支</li><li>英雄 616 黄尖</li><li>英雄 616 银尖</li><li>百乐 78G+ F尖</li><li>百乐 笑脸</li><li>永生 活塞 0.38</li><li>白金 PSQC-400</li><li>烂笔头3066（仿百乐贵妃）；</li><li>施耐德 BK406</li><li>烂笔头 757（仿凌美的那种）；</li><li>国产凌美（仿凌美的那种，赠品）；</li><li>白金 PPQ200，2支</li><li>百乐 FR-50R 贵妃</li><li>英雄266 特细（上海原厂）</li><li>英雄266 特细（丽水）</li><li>英雄266 美工笔</li></ul><!-- more --><h2 id="永生-活塞-0-38"><a href="#永生-活塞-0-38" class="headerlink" title="永生 活塞 0.38"></a>永生 活塞 0.38</h2><p>直到今天我都怀疑是不是买假了，怎么说好咧？<br>这玩意握起来感觉就好像握了一个注射器，粗的都比0.5都过分，我忍了，不到一个月，竟然开始以肉眼可见的速度漏墨。<br>嗯，不该ren了的，应该reng了的。</p><h2 id="国产凌美（仿凌美的那种，赠品）"><a href="#国产凌美（仿凌美的那种，赠品）" class="headerlink" title="国产凌美（仿凌美的那种，赠品）"></a>国产凌美（仿凌美的那种，赠品）</h2><p>本来是店家搞活动，买100个墨囊送了一支钢笔，没想到意外的好用，如果不去想她单薄的外壳和简略的做工，我甚至怀疑起原版凌美的实力。</p><p>心心念啊心心念。</p><p>店家说钢笔不单卖，必须买够100支墨囊才有。我就去阿里巴巴找最便宜的钢笔批发商，心想赠品出身和那个工料应该不会贵，认真对比和仔细揣摩后，一口气买了5支。</p><p>让人意外的是，这放在一起无法分辨的五胞胎竟有着不同的表现…算上原来的，共有6种风格。</p><p>想来错的是我，不该贪得无厌，就不该在一次幸运之后期许更多。</p><p>相见不如怀念，相濡以沫不如相忘于江湖。</p><h2 id="总结下心得："><a href="#总结下心得：" class="headerlink" title="总结下心得："></a>总结下心得：</h2><p>其实现在国内很多品牌的很多型号，都是类似的生产线或者直接有代工厂的，尽管品牌不同，但实际上手感、品控等同质化很严重。所以不用每一个坑都跳。</p><ul><li>千万慎重选择那些淘宝文案不错，喜欢用彩墨罐装无名透明钢笔的个人店铺，公模而已。</li><li>洇字这个问题，笔、墨、纸都可能有关系。</li><li>如果你的钢笔你挺喜欢或者还不错，总之有价值的，建议尽量不要用碳素墨水。</li><li>喜欢用透明壳子的尽量用墨囊，用吸墨器会导致结构处不必要的地方沾墨，影响美观，用笔杆灌墨因为压力问题，可能会导致漏墨。</li><li>觉得粗了可以夹一下笔尖，觉得细了可以用细刀片划一下中缝，这玩意是消耗品，坏了再买就是，不用因为买了便宜货就去刁难卖家。</li><li>把心思用在写字和做事上，钢笔只是一个工具而已，要用它来成就自己，而不是自己去成就它。</li><li>这玩意还真不是一分钱一分货，比如我就非常喜欢买墨囊送的那支钢笔，意外的好用。</li></ul><h2 id="附录：钢笔墨囊规格"><a href="#附录：钢笔墨囊规格" class="headerlink" title="附录：钢笔墨囊规格"></a>附录：钢笔墨囊规格</h2><p>默认单位：毫米。数据为个人收集，仅供参考，也欢迎你帮我补充。</p><table><thead><tr><th>接口内径</th><th>接口外径</th><th>总长度</th><th>墨囊外经</th><th>适应品牌</th><th>典型型号</th></tr></thead><tbody><tr><td>3.4</td><td>5</td><td>50</td><td>8</td><td>晨光、爱好、英雄、白雪</td><td>英雄359</td></tr><tr><td>2.6</td><td>4</td><td>52</td><td>6</td><td>英雄、晨光、永生、罗氏、依人</td><td>英雄卡通3159-3169、382、6160、7053、6006</td></tr><tr><td>6</td><td>8</td><td>60</td><td></td><td>百乐</td><td>IC-50</td></tr><tr><td>2</td><td>4</td><td>38</td><td></td><td>施耐德、马培德、万宝龙、红环、百利金、施德楼、辉柏嘉、Kaweco</td><td>欧标</td></tr></tbody></table><h2 id="打磨"><a href="#打磨" class="headerlink" title="打磨"></a>打磨</h2><p>丑话说前头：要想清楚自己为什么要这么做，尽量少做没有意义的事情；如果觉得手不是那么巧的，就算了，别往下看了，因为下面的行为，我自己都怀疑是不是”毁笔”。</p><p>我贪恋于百乐、长刀研之流的手感与理念，同时喜欢国产钢笔的实惠（不仅仅笔杆子，墨囊价格也非常实惠），即得陇且望蜀，通过打磨，调和出适合自己的口味。</p><h3 id="所需材料："><a href="#所需材料：" class="headerlink" title="所需材料："></a>所需材料：</h3><ul><li>打磨油石（我都是3000#/10000#双面）</li><li>放大镜（买的是20倍镜，但是我感觉效果没参数漂亮）</li><li>目标钢笔</li></ul><p>图就先不上了，理由如上，这次仓促，有时间或者有需要再补。</p><p>说结果吧：</p><ul><li>10000目对于”想要提升”钢笔的顺滑度来说，还是太粗了，而且我的油石用了几下，表面变得粗糙起来，导致后面的打磨更加不理想。建议想上车的朋友选择更好的材质，有条件的建议尝试更细的材质；</li><li>本来是奔着长刀研的手感去的，最后磨坏了一个笔尖后就放弃了，时间成本不合适。</li><li>修复了一支国产钢笔飞白的毛病，这个很完美。（首先在至上画8，找到飞白出现的角度，针对性的打磨，切记磨一下试三下，小心谨慎）。</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 个人爱好 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 爱好 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>FreeSWITCH的rpm安装和配置MySQL存储用户并使之支持视频通话</title>
+      <link href="/2018/12/04/"/>
+      <url>/2018/12/04/</url>
+      
+        <content type="html"><![CDATA[<p>网上其他貌似都是源码方式安装的，这里我来一发rpm安装和简单配置。</p><a id="more"></a><p><a href="https://freeswitch.org/confluence/display/FREESWITCH/FreeSWITCH+Explained" target="_blank" rel="noopener">官网的文档</a>，其实已经很详尽了。这里仅仅是我个人走过的一些坑的介绍。</p><p>截至到当前，最新版的稳定版是1.6，测试版好像是更新到了1.9（如果你想体验，请使用源码编译安装方式，但是目前官方还是标注”WARNING not suitable for production”）。</p><p>我的环境是CentOS7 + FreeSWITCH1.6 + Mariadb5.5.6，如果你的环境和我一样，那么你可能可以直接复制我的代码。</p><h1 id="安装FreeSWITCH"><a href="#安装FreeSWITCH" class="headerlink" title="安装FreeSWITCH"></a>安装FreeSWITCH</h1><p><a href="https://freeswitch.org/confluence/display/FREESWITCH/Installation" target="_blank" rel="noopener">https://freeswitch.org/confluence/display/FREESWITCH/Installation</a></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">yum install -y http:&#x2F;&#x2F;files.freeswitch.org&#x2F;freeswitch-release-1-6.noarch.rpm epel-release</span><br><span class="line">yum install -y freeswitch-config-vanilla freeswitch-lang-* freeswitch-sounds-*</span><br><span class="line">systemctl enable freeswitch</span><br><span class="line">systemctl start freeswitch</span><br></pre></td></tr></table></figure><h1 id="配置数据库"><a href="#配置数据库" class="headerlink" title="配置数据库"></a>配置数据库</h1><p><a href="https://freeswitch.org/confluence/display/FREESWITCH/Using+ODBC+in+the+core" target="_blank" rel="noopener">https://freeswitch.org/confluence/display/FREESWITCH/Using+ODBC+in+the+core</a></p><p>unixODBC是一个可以让你在Unix/Linux系统下使用ODBC来连接数据库的组件，<br>就像java中的mysql-connector-java-5.1.6-bin.jar一样，负责连接数据库的。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">yum install -y unixODBC-devel mysql-connector-odbc mariadb-server </span><br><span class="line">systemctl enable mariadb</span><br><span class="line">systemctl start mariadb</span><br><span class="line"></span><br><span class="line">mysql_secure_installation</span><br></pre></td></tr></table></figure><p>MySQL数据库中，创建freeswitch数据库，添加如下的表，并插入元素：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">CREATE DATABASE IF NOT EXISTS freeswitch default charset utf8 COLLATE utf8_general_ci;</span><br><span class="line"></span><br><span class="line">drop table if exists &#96;users&#96;;</span><br><span class="line"></span><br><span class="line">CREATE TABLE IF NOT EXISTS &#96;users&#96; (</span><br><span class="line">    &#96;user_id&#96; int(11) NOT NULL AUTO_INCREMENT,</span><br><span class="line">    &#96;domain&#96; varchar(90) NOT NULL COMMENT &#39;域&#39;,</span><br><span class="line">    &#96;sip_id&#96; varchar(90) NOT NULL COMMENT &#39;音视频聊天ID&#39;,</span><br><span class="line">    &#96;mail_box&#96; varchar(90) NOT NULL COMMENT &#39;邮箱&#39;,</span><br><span class="line">    &#96;number_alias&#96; varchar(90) NOT NULL COMMENT &#39;&#39;,</span><br><span class="line">    &#96;pass_word&#96; varchar(255) NOT NULL COMMENT &#39;密码&#39;,</span><br><span class="line">    &#96;dial_string&#96; varchar(90) NOT NULL COMMENT &#39;&#39;,</span><br><span class="line">    &#96;user_context&#96; varchar(90) NOT NULL COMMENT &#39;&#39;,</span><br><span class="line">    &#96;author_id&#96; int(11) NOT NULL COMMENT &#39;作者&#39;,</span><br><span class="line">    &#96;create_time&#96; int(11) NOT NULL COMMENT &#39;创建时间&#39;,</span><br><span class="line">    &#96;del_time&#96; int(11) NOT NULL COMMENT &#39;删除时间&#39;,</span><br><span class="line">    &#96;handler_id&#96; int(11) NOT NULL COMMENT &#39;处理人&#39;,</span><br><span class="line">PRIMARY KEY (&#96;user_id&#96;),</span><br><span class="line">KEY &#96;sip_id&#96; (&#96;sip_id&#96;),</span><br><span class="line">KEY &#96;author_id&#96; (&#96;author_id&#96;),</span><br><span class="line">KEY &#96;create_time&#96; (&#96;create_time&#96;),</span><br><span class="line">KEY &#96;del_time&#96; (&#96;del_time&#96;),</span><br><span class="line">KEY &#96;handler_id&#96; (&#96;handler_id&#96;)</span><br><span class="line">) ENGINE&#x3D;InnoDB DEFAULT CHARSET&#x3D;utf8 ROW_FORMAT&#x3D;DYNAMIC COMMENT&#x3D;&#39;用户&#39;;</span><br><span class="line"> </span><br><span class="line">INSERT INTO &#96;users&#96; VALUES </span><br><span class="line">    (1, &#39;&#39;, &#39;8001&#39;, &#39;&#39;, &#39;&#39;, &#39;2345&#39;, &#39;&#39;, &#39;default&#39;, 0, unix_timestamp(now()), 0, 0),</span><br><span class="line">    (2, &#39;&#39;, &#39;8002&#39;, &#39;&#39;, &#39;&#39;, &#39;2345&#39;, &#39;&#39;, &#39;default&#39;, 0, unix_timestamp(now()), 0, 0),</span><br><span class="line">    (3, &#39;&#39;, &#39;8003&#39;, &#39;&#39;, &#39;&#39;, &#39;2345&#39;, &#39;&#39;, &#39;default&#39;, 0, unix_timestamp(now()), 0, 0),</span><br><span class="line">    (4, &#39;&#39;, &#39;8004&#39;, &#39;&#39;, &#39;&#39;, &#39;2345&#39;, &#39;&#39;, &#39;default&#39;, 0, unix_timestamp(now()), 0, 0);</span><br></pre></td></tr></table></figure><h4 id="配置要连接的数据库信息-gt-etc-odbc-ini"><a href="#配置要连接的数据库信息-gt-etc-odbc-ini" class="headerlink" title="配置要连接的数据库信息 -&gt; /etc/odbc.ini"></a>配置要连接的数据库信息 -&gt; /etc/odbc.ini</h4><p><a href="https://freeswitch.org/confluence/display/FREESWITCH/Using+ODBC+in+the+core" target="_blank" rel="noopener">https://freeswitch.org/confluence/display/FREESWITCH/Using+ODBC+in+the+core</a></p><p>请按自己的需要，修改自己的信息</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">cat &lt;&lt;EOF &gt;&gt; &#x2F;etc&#x2F;odbc.ini</span><br><span class="line">[freeswitch]</span><br><span class="line">Driver &#x3D; &#x2F;usr&#x2F;lib64&#x2F;libmyodbc5.so</span><br><span class="line">SERVER &#x3D; localhost</span><br><span class="line">PORT &#x3D; 3306</span><br><span class="line">DATABASE &#x3D; freeswitch</span><br><span class="line">USER &#x3D; $&#123;数据库账户&#125;</span><br><span class="line">PASSWORD &#x3D; $&#123;数据库密码&#125;</span><br><span class="line">EOF</span><br></pre></td></tr></table></figure><p>修改之后，执行</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">isql -v freeswitch</span><br></pre></td></tr></table></figure><p>如果出现</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">+---------------------------------------+</span><br><span class="line">| Connected!                            |</span><br><span class="line">|                                       |</span><br><span class="line">| sql-statement                         |</span><br><span class="line">| help [tablename]                      |</span><br><span class="line">| quit                                  |</span><br><span class="line">|                                       |</span><br><span class="line">+---------------------------------------+</span><br><span class="line">SQL&gt;</span><br></pre></td></tr></table></figure><p>代表你的unixodbc配置成功了</p><h2 id="配置数据库-用户"><a href="#配置数据库-用户" class="headerlink" title="配置数据库-用户"></a>配置数据库-用户</h2><p>安装lua，用来处理用户</p><p>eg：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line">yum install -y freeswitch-lua</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">vi &#x2F;etc&#x2F;freeswitch&#x2F;autoload_configs&#x2F;lua.conf.xml</span><br><span class="line"></span><br><span class="line"># 在适当的位置添加以下：</span><br><span class="line">&lt;param name&#x3D;&quot;xml-handler-script&quot; value&#x3D;&quot;gen_dir_user_xml.lua&quot;&#x2F;&gt;</span><br><span class="line">&lt;param name&#x3D;&quot;xml-handler-bindings&quot; value&#x3D;&quot;directory&quot;&#x2F;&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">touch &#x2F;usr&#x2F;share&#x2F;freeswitch&#x2F;scripts&#x2F;gen_dir_user_xml.lua</span><br><span class="line"></span><br><span class="line">cat &lt;&lt;EOF &gt;&gt; &#x2F;usr&#x2F;share&#x2F;freeswitch&#x2F;scripts&#x2F;gen_dir_user_xml.lua</span><br><span class="line">freeswitch.consoleLog(&quot;notice&quot;, &quot;Debug from gen_dir_user_xml.lua, provided params:\n&quot; .. params:serialize() .. &quot;\n&quot;)</span><br><span class="line"> </span><br><span class="line">local req_domain &#x3D; params:getHeader(&quot;domain&quot;)</span><br><span class="line">local req_key    &#x3D; params:getHeader(&quot;key&quot;)</span><br><span class="line">local req_user   &#x3D; params:getHeader(&quot;user&quot;)</span><br><span class="line"> </span><br><span class="line">assert (req_domain and req_key and req_user,</span><br><span class="line">  &quot;This example script only supports generating directory xml for a single user !\n&quot;)</span><br><span class="line"> </span><br><span class="line">local dbh &#x3D; freeswitch.Dbh(&quot;odbc:&#x2F;&#x2F;freeswitch:root:815&quot;)</span><br><span class="line">if dbh:connected() &#x3D;&#x3D; false then</span><br><span class="line">  freeswitch.consoleLog(&quot;notice&quot;, &quot;gen_dir_user_xml.lua cannot connect to database&quot; .. dsn .. &quot;\n&quot;)</span><br><span class="line">  return</span><br><span class="line">end</span><br><span class="line"> </span><br><span class="line">local my_query &#x3D; string.format(&quot;select * from users where del_time &#x3D; 0 and sip_id &#x3D;&#39;%s&#39; limit 1&quot;, req_user)</span><br><span class="line"> </span><br><span class="line">assert (dbh:query(my_query, function(u)</span><br><span class="line">  XML_STRING &#x3D;</span><br><span class="line">[[&lt;?xml version&#x3D;&quot;1.0&quot; encoding&#x3D;&quot;UTF-8&quot; standalone&#x3D;&quot;no&quot;?&gt;</span><br><span class="line">&lt;document type&#x3D;&quot;freeswitch&#x2F;xml&quot;&gt;</span><br><span class="line">  &lt;section name&#x3D;&quot;directory&quot;&gt;</span><br><span class="line">    &lt;domain name&#x3D;&quot;]] .. req_domain .. [[&quot;&gt;</span><br><span class="line">      &lt;user id&#x3D;&quot;]] .. req_user .. [[&quot;&gt;</span><br><span class="line">        &lt;params&gt;</span><br><span class="line">          &lt;param name&#x3D;&quot;password&quot; value&#x3D;&quot;]] .. u.pass_word .. [[&quot;&#x2F;&gt;</span><br><span class="line">          &lt;param name&#x3D;&quot;dial-string&quot; value&#x3D;&quot;&#123;sip_invite_domain&#x3D;$&#123;dialed_domain&#125;,presence_id&#x3D;$&#123;dialed_user&#125;@$&#123;dialed_domain&#125;&#125;$&#123;sofia_contact($&#123;dialed_user&#125;@$&#123;dialed_domain&#125;)&#125;&quot;&#x2F;&gt;</span><br><span class="line">        &lt;&#x2F;params&gt;</span><br><span class="line">        &lt;variables&gt;</span><br><span class="line">          &lt;variable name&#x3D;&quot;user_context&quot; value&#x3D;&quot;]] .. u.user_context .. [[&quot;&#x2F;&gt;</span><br><span class="line">          &lt;variable name&#x3D;&quot;toll_allow&quot; value&#x3D;&quot;domestic,international,local&quot;&#x2F;&gt;</span><br><span class="line">          &lt;variable name&#x3D;&quot;accountcode&quot; value&#x3D;&quot;]] .. req_user .. [[&quot;&#x2F;&gt;</span><br><span class="line">          &lt;variable name&#x3D;&quot;effective_caller_id_name&quot; value&#x3D;&quot;Extension ]] .. req_user .. [[&quot;&#x2F;&gt;</span><br><span class="line">          &lt;variable name&#x3D;&quot;effective_caller_id_number&quot; value&#x3D;&quot;]] .. req_user .. [[&quot;&#x2F;&gt;</span><br><span class="line">          &lt;variable name&#x3D;&quot;outbound_caller_id_name&quot; value&#x3D;&quot;&quot;&#x2F;&gt;</span><br><span class="line">          &lt;variable name&#x3D;&quot;outbound_caller_id_number&quot; value&#x3D;&quot;&quot;&#x2F;&gt;</span><br><span class="line">          &lt;variable name&#x3D;&quot;callgroup&quot; value&#x3D;&quot;techsupport&quot;&#x2F;&gt;</span><br><span class="line">        &lt;&#x2F;variables&gt;</span><br><span class="line">      &lt;&#x2F;user&gt;</span><br><span class="line">    &lt;&#x2F;domain&gt;</span><br><span class="line">  &lt;&#x2F;section&gt;</span><br><span class="line">&lt;&#x2F;document&gt;]]</span><br><span class="line"> </span><br><span class="line">  freeswitch.consoleLog(&quot;notice&quot;, &quot;Debug from gen_dir_user_xml.lua, generated XML:\n&quot; .. XML_STRING .. &quot;\n&quot;)</span><br><span class="line">end))</span><br><span class="line">EOF</span><br></pre></td></tr></table></figure><p>让原来的xml验证用户的功能失效</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">vi &#x2F;etc&#x2F;freeswitch&#x2F;directory&#x2F;default.xml</span><br><span class="line"></span><br><span class="line"># 删除的内容如下：</span><br><span class="line">&lt;group name&#x3D;&quot;default&quot;&gt;</span><br><span class="line">    &lt;users&gt;</span><br><span class="line">        &lt;X-PRE-PROCESS cmd&#x3D;&quot;include&quot; data&#x3D;&quot;default&#x2F;*.xml&quot;&#x2F;&gt;</span><br><span class="line">    &lt;&#x2F;users&gt;</span><br><span class="line">&lt;&#x2F;group&gt;</span><br></pre></td></tr></table></figure><h3 id="修改拨号计划"><a href="#修改拨号计划" class="headerlink" title="修改拨号计划"></a>修改拨号计划</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi &#x2F;etc&#x2F;freeswitch&#x2F;dialplan&#x2F;default.xml</span><br></pre></td></tr></table></figure><p>添加如下内容，好让所有的拨号通过以下的条件</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;extension name&#x3D;&quot;Local_Extension2&quot;&gt;</span><br><span class="line">    &lt;condition field&#x3D;&quot;destination_number&quot; expression&#x3D;&quot;^([0-9][0-9][0-9][0-9])$&quot;&gt;</span><br><span class="line">        &lt;action application&#x3D;&quot;export&quot; data&#x3D;&quot;dialed_extension&#x3D;$1&quot;&#x2F;&gt;</span><br><span class="line">        &lt;action application&#x3D;&quot;set&quot; data&#x3D;&quot;call_timeout&#x3D;10&quot;&#x2F;&gt;</span><br><span class="line">        &lt;action application&#x3D;&quot;set&quot; data&#x3D;&quot;hangup_after_bridge&#x3D;true&quot;&#x2F;&gt;</span><br><span class="line">        &lt;action application&#x3D;&quot;set&quot; data&#x3D;&quot;continue_on_fail&#x3D;false&quot;&#x2F;&gt;</span><br><span class="line">        &lt;action application&#x3D;&quot;bridge&quot; data&#x3D;&quot;user&#x2F;$&#123;dialed_extension&#125;@$&#123;domain_name&#125;&quot;&#x2F;&gt;</span><br><span class="line">    &lt;&#x2F;condition&gt;</span><br><span class="line">&lt;&#x2F;extension&gt;</span><br></pre></td></tr></table></figure><h1 id="视频通话"><a href="#视频通话" class="headerlink" title="视频通话"></a>视频通话</h1><p>编辑文件</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">vi &#x2F;etc&#x2F;freeswitch&#x2F;conf&#x2F;vars.xml</span><br><span class="line"></span><br><span class="line">#修改以下字样</span><br><span class="line"></span><br><span class="line">...</span><br><span class="line">&lt;X-PRE-PROCESS cmd&#x3D;&quot;set&quot; data&#x3D;&quot;global_codec_prefs&#x3D;OPUS,G722,PCMU,PCMA,VP8,H263,H264&quot;&#x2F;&gt;</span><br><span class="line">&lt;X-PRE-PROCESS cmd&#x3D;&quot;set&quot; data&#x3D;&quot;outbound_codec_prefs&#x3D;OPUS,G722,PCMU,PCMA,VP8,H263,H264&quot;&#x2F;&gt;</span><br><span class="line">...</span><br></pre></td></tr></table></figure><p>再编辑文件</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">vi &#x2F;etc&#x2F;freeswitch&#x2F;sip_profiles&#x2F;internal.xml</span><br><span class="line"></span><br><span class="line">#修改以下字样</span><br><span class="line"></span><br><span class="line">...</span><br><span class="line">&lt;param name&#x3D;&quot;inbound-proxy-media&quot; value&#x3D;&quot;true&quot;&#x2F;&gt;</span><br><span class="line">...</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> FreeSWITCH </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> FreeSWITCH </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Linux Mint 美化</title>
+      <link href="/2018/11/21/"/>
+      <url>/2018/11/21/</url>
+      
+        <content type="html"><![CDATA[<p>个人喜欢简洁一些的，基于LinuxMinx19通过。</p><a id="more"></a><p>其实我就装了一个Dock – Plank</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo add-apt-repository ppa:ricotz&#x2F;docky</span><br><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install plank</span><br></pre></td></tr></table></figure><p>效果</p><p><img src="/git-static/images/2018/11/21/1.jpg" alt="image"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Linux开发环境配置</title>
+      <link href="/2018/11/20/"/>
+      <url>/2018/11/20/</url>
+      
+        <content type="html"><![CDATA[<p>个人配置</p><a id="more"></a><h1 id="软件"><a href="#软件" class="headerlink" title="软件"></a>软件</h1><h4 id="shadowsocks-qt5"><a href="#shadowsocks-qt5" class="headerlink" title="shadowsocks-qt5"></a>shadowsocks-qt5</h4><p><a href="https://github.com/shadowsocks/shadowsocks-qt5/releases" target="_blank" rel="noopener">https://github.com/shadowsocks/shadowsocks-qt5/releases</a></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">chmod a+x Shadowsocks-Qt5-x86_64.AppImage</span><br><span class="line">nohup .&#x2F;Shadowsocks-Qt5-x86_64.AppImage</span><br></pre></td></tr></table></figure><h4 id="GenPAC"><a href="#GenPAC" class="headerlink" title="GenPAC"></a>GenPAC</h4><p><a href="https://github.com/JinnLynn/genpac" target="_blank" rel="noopener">https://github.com/JinnLynn/genpac</a></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 安装或更新</span><br><span class="line">$ pip install -U genpac</span><br><span class="line"></span><br><span class="line"># 生成pac文件</span><br><span class="line">genpac --pac-proxy &quot;SOCKS5 127.0.0.1:1080&quot; --gfwlist-proxy&#x3D;&quot;SOCKS5 127.0.0.1:1080&quot; --gfwlist-url&#x3D;https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;gfwlist&#x2F;gfwlist&#x2F;master&#x2F;gfwlist.txt --output&#x3D;&quot;&#x2F;opt&#x2F;autoproxy.pac&quot;</span><br></pre></td></tr></table></figure><p>设置全局pac代理</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">file:&#x2F;&#x2F;&#x2F;opt&#x2F;autoproxy.pac</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Gradle,Maven,Homebrew,npm,Ruby,Docker,pip设置国内镜像加速</title>
+      <link href="/2018/11/19/"/>
+      <url>/2018/11/19/</url>
+      
+        <content type="html"><![CDATA[<p>修改镜像的目的，不是为了简单的突破封锁，而是获得更快的下载速度。千万注意根据个人实际需要修改相应路径。</p><a id="more"></a><h1 id="Gradle"><a href="#Gradle" class="headerlink" title="Gradle"></a>Gradle</h1><p>Gradle的初始化脚本(Initialization Scripts)，也是运行时的全局配置。<br>更详细的介绍请参阅 <a href="http://gradle.org/docs/current/userguide/init_scripts.html" target="_blank" rel="noopener">http://gradle.org/docs/current/userguide/init_scripts.html</a></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">touch ~&#x2F;.gradle&#x2F;init.gradle</span><br><span class="line"></span><br><span class="line">allprojects &#123;</span><br><span class="line">    repositories &#123;</span><br><span class="line">        def REPOSITORY_URL &#x3D; &#39;http:&#x2F;&#x2F;maven.aliyun.com&#x2F;nexus&#x2F;content&#x2F;groups&#x2F;public&#x2F;&#39;</span><br><span class="line">        all &#123; ArtifactRepository repo -&gt;</span><br><span class="line">            if (repo instanceof MavenArtifactRepository &amp;&amp; repo.url !&#x3D; null) &#123;</span><br><span class="line">                def url &#x3D; repo.url.toString()</span><br><span class="line">                if (url.startsWith(&#39;https:&#x2F;&#x2F;repo1.maven.org&#x2F;maven2&#39;) || url.startsWith(&#39;https:&#x2F;&#x2F;jcenter.bintray.com&#x2F;&#39;)) &#123;</span><br><span class="line">                    project.logger.lifecycle &quot;Repository $&#123;repo.url&#125; replaced by $REPOSITORY_URL.&quot;</span><br><span class="line">                    remove repo</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        maven &#123;</span><br><span class="line">            url REPOSITORY_URL</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h1 id="Maven"><a href="#Maven" class="headerlink" title="Maven"></a>Maven</h1><p>修改maven根目录下的conf文件夹中的settings.xml文件（或者～/.m2目录下的’settings.xml’文件）。</p><p>ps.如果你和我一样在使用idea，那么在项目右键，依次选择”Maven”-“create ‘settings.xml’”，和在～/.m2目录下新建’settings.xml’文件是一样的。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version&#x3D;&quot;1.0&quot; encoding&#x3D;&quot;UTF-8&quot;?&gt;</span><br><span class="line">&lt;settings xmlns&#x3D;&quot;http:&#x2F;&#x2F;maven.apache.org&#x2F;SETTINGS&#x2F;1.0.0&quot;</span><br><span class="line">          xmlns:xsi&#x3D;&quot;http:&#x2F;&#x2F;www.w3.org&#x2F;2001&#x2F;XMLSchema-instance&quot;</span><br><span class="line">          xsi:schemaLocation&#x3D;&quot;http:&#x2F;&#x2F;maven.apache.org&#x2F;SETTINGS&#x2F;1.0.0 http:&#x2F;&#x2F;maven.apache.org&#x2F;xsd&#x2F;settings-1.0.0.xsd&quot;&gt;</span><br><span class="line">  &lt;mirrors&gt;</span><br><span class="line">    &lt;mirror&gt;</span><br><span class="line">        &lt;id&gt;alimaven&lt;&#x2F;id&gt;</span><br><span class="line">        &lt;name&gt;aliyun maven&lt;&#x2F;name&gt;</span><br><span class="line">        &lt;url&gt;http:&#x2F;&#x2F;maven.aliyun.com&#x2F;nexus&#x2F;content&#x2F;groups&#x2F;public&#x2F;&lt;&#x2F;url&gt;</span><br><span class="line">        &lt;mirrorOf&gt;central&lt;&#x2F;mirrorOf&gt;        </span><br><span class="line">    &lt;&#x2F;mirror&gt;</span><br><span class="line">  &lt;&#x2F;mirrors&gt;</span><br><span class="line">&lt;&#x2F;settings&gt;</span><br></pre></td></tr></table></figure><h1 id="Homebrew"><a href="#Homebrew" class="headerlink" title="Homebrew"></a>Homebrew</h1><p><a href="https://brew.sh/index_zh-cn" target="_blank" rel="noopener">https://brew.sh/index_zh-cn</a></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;usr&#x2F;bin&#x2F;ruby -e &quot;$(curl -fsSL https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;Homebrew&#x2F;install&#x2F;master&#x2F;install)&quot;</span><br></pre></td></tr></table></figure><p>Homebrew-bottles 镜像</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">echo &#39;export HOMEBREW_BOTTLE_DOMAIN&#x3D;https:&#x2F;&#x2F;mirrors.tuna.tsinghua.edu.cn&#x2F;homebrew-bottles&#39; &gt;&gt; ~&#x2F;.bash_profile</span><br><span class="line">source ~&#x2F;.bash_profile</span><br></pre></td></tr></table></figure><h1 id="npm"><a href="#npm" class="headerlink" title="npm"></a>npm</h1><p>下载地址：<a href="https://nodejs.org/en/" target="_blank" rel="noopener">https://nodejs.org/en/</a></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm config set registry https:&#x2F;&#x2F;registry.npm.taobao.org</span><br><span class="line">npm config set disturl https:&#x2F;&#x2F;npm.taobao.org&#x2F;dist --global</span><br></pre></td></tr></table></figure><p>配置后可通过下面方式来验证是否成功</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm config get</span><br></pre></td></tr></table></figure><h1 id="Ruby"><a href="#Ruby" class="headerlink" title="Ruby"></a>Ruby</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">#修改源</span><br><span class="line">gem sources --remove https:&#x2F;&#x2F;rubygems.org&#x2F;</span><br><span class="line">gem sources --add https:&#x2F;&#x2F;gems.ruby-china.com&#x2F;</span><br><span class="line"></span><br><span class="line"># 查看镜像</span><br><span class="line"></span><br><span class="line">gem sources -l</span><br><span class="line"></span><br><span class="line"># 更新升级</span><br><span class="line"></span><br><span class="line">sudo gem update --system</span><br></pre></td></tr></table></figure><h1 id="Docker"><a href="#Docker" class="headerlink" title="Docker"></a>Docker</h1><p><a href="http://docker-cn.com/registry-mirror" target="_blank" rel="noopener">http://docker-cn.com/registry-mirror</a></p><p>修改 /etc/docker/daemon.json 文件并添加上 registry-mirrors 键值。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;registry-mirrors&quot;: [&quot;https:&#x2F;&#x2F;registry.docker-cn.com&quot;]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="pip"><a href="#pip" class="headerlink" title="pip"></a>pip</h2><p>临时使用，可以在使用pip的时候加参数</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-i https:&#x2F;&#x2F;pypi.tuna.tsinghua.edu.cn&#x2F;simple</span><br></pre></td></tr></table></figure><p>永久修改，一劳永逸：</p><p>Linux下，修改或创建 ~/.pip/pip.conf</p><p>Windows下，修改或创建 %APPDATA%\pip\pip.ini</p><p>内容如下：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[global]</span><br><span class="line">index-url &#x3D; https:&#x2F;&#x2F;pypi.tuna.tsinghua.edu.cn&#x2F;simple</span><br><span class="line">[install]</span><br><span class="line">trusted-host&#x3D;mirrors.aliyun.com</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> Code </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Gradle </tag>
+            
+            <tag> Maven </tag>
+            
+            <tag> Homebrew </tag>
+            
+            <tag> Node </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>ToThePoint--Vagrant</title>
+      <link href="/2018/11/10/"/>
+      <url>/2018/11/10/</url>
+      
+        <content type="html"><![CDATA[<p>说重点系列–Vagrant：</p><p>这个东西本质上，是你电脑上要装一个虚拟机，然后通过命令行，可以很简单的生成和配置虚拟机。</p><p>很多人说这个东西是统一开发环境的神器。<br>不过我一般用于测试环境。过去我测试一个程序，要找一台电脑或者vps，部署好Linux，然后跑一跑，这么一个流程下来，少说2个小时完了，有了vagrant，我可能只需要十分钟就完事了。</p><a id="more"></a><h1 id="资源"><a href="#资源" class="headerlink" title="资源"></a>资源</h1><p>客户端下载：<a href="https://www.vagrantup.com/downloads.html" target="_blank" rel="noopener">https://www.vagrantup.com/downloads.html</a></p><p>CentOS box下载：<a href="https://cloud.centos.org/centos/7/vagrant/x86_64/images/" target="_blank" rel="noopener">https://cloud.centos.org/centos/7/vagrant/x86_64/images/</a></p><p>手册：<a href="https://www.vagrantup.com/docs/index.html" target="_blank" rel="noopener">https://www.vagrantup.com/docs/index.html</a></p><h1 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h1><h2 id="加载box"><a href="#加载box" class="headerlink" title="加载box"></a>加载box</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vagrant box add $&#123;title&#125; $url&#125;</span><br></pre></td></tr></table></figure><p>title为自己起的名字，url为box地址，可以在线也可以本地。eg:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vagrant box add CentOS-7-x86_64-Vagrant-1809_01 D:\boxes\CentOS-7-x86_64-Vagrant-1809_01.HyperV.box</span><br></pre></td></tr></table></figure><h2 id="建立一个虚拟机"><a href="#建立一个虚拟机" class="headerlink" title="建立一个虚拟机"></a>建立一个虚拟机</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">cd $&#123;project&#125;</span><br><span class="line"></span><br><span class="line"># 下面这个步骤，本质上是在指定的目录生成一个用于配置的Vagrantfile，实际上这时候还并没有真正意义上生成一个虚拟机。</span><br><span class="line"># 同样的道理，如果你想修改Vagrantfile，在这个步骤之后去执行。</span><br><span class="line">vagrant init CentOS-7-x86_64-Vagrant-1809_01</span><br><span class="line"></span><br><span class="line"># 下面这个步骤，是根据Vagrantfile配置一台虚拟机</span><br><span class="line">vagrant up</span><br><span class="line"></span><br><span class="line"># 登陆&amp;使用</span><br><span class="line">vagrant ssh</span><br></pre></td></tr></table></figure><h2 id="打包分发"><a href="#打包分发" class="headerlink" title="打包分发"></a>打包分发</h2><p>当你配置好开发环境后，退出并关闭虚拟机。在终端里对开发环境进行打包：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ vagrant package</span><br></pre></td></tr></table></figure><p>打包完成后会在当前目录生成一个 package.box 的文件，将这个文件传给其他用户.<br>其他用户只要添加这个 box 并用其初始化自己的开发目录就能得到一个一模一样的开发环境了。</p><p>如果你只是一般使用，那么以上的操作，从新建一个”box”，到使用”box”创建一个虚拟开发环境，到将这个环境分发使用你已经没问题了。<br>那么我们还差什么？是的，查找和删除</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"># 查看所有已经保存并生效的box，</span><br><span class="line">vagrant box list</span><br><span class="line"></span><br><span class="line"># 查看所有已经生成的虚拟机</span><br><span class="line">vagrant gloal-status</span><br><span class="line"></span><br><span class="line"># 删除虚拟及</span><br><span class="line"># ps:这一步中的虚拟机id，你可以简写，比如你只有一个虚拟机。这个虚拟机的id是32547698，那么你可以直接输入一个32，会自动匹配的。  </span><br><span class="line">vagrant destroy $&#123;上一步生成的ID&#125;</span><br></pre></td></tr></table></figure><p>好了，你已经学会了。</p><h1 id="Options"><a href="#Options" class="headerlink" title="Options"></a>Options</h1><p>~/dev 目录对应虚拟机中的目录是 /vagrant</p><h2 id="虚拟化增强"><a href="#虚拟化增强" class="headerlink" title="虚拟化增强"></a>虚拟化增强</h2><p>其实这个没啥大用，我都准备删掉都东西。</p><h3 id="Hyper-V"><a href="#Hyper-V" class="headerlink" title="Hyper-V"></a>Hyper-V</h3><p>Windows需管理员权限运行</p><h3 id="virtual-box"><a href="#virtual-box" class="headerlink" title="virtual box"></a>virtual box</h3><p>centos</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install -y gcc kernel-devel</span><br></pre></td></tr></table></figure><p>ubuntu</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install -y gcc make perl</span><br></pre></td></tr></table></figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sh .&#x2F;VBoxLinuxAdditions.run</span><br></pre></td></tr></table></figure><h2 id="修改网卡模式"><a href="#修改网卡模式" class="headerlink" title="修改网卡模式"></a>修改网卡模式</h2><h3 id="private-network"><a href="#private-network" class="headerlink" title="private_network"></a>private_network</h3><p>Vagrant 默认是使用端口映射方式将虚拟机的端口映射本地从而实现类似 <a href="http://localhost:80" target="_blank" rel="noopener">http://localhost:80</a> 这种访问方式。</p><p>这种方式比较麻烦，新开和修改端口的时候都得编辑。相比较而言，host-only 模式显得方便多了。打开 Vagrantfile，将下面这行的注释去掉（移除 #）并保存：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">config.vm.network :private_network, ip: &quot;192.168.33.10&quot;</span><br></pre></td></tr></table></figure><p>重启虚拟机，这样我们就能用 192.168.33.10 访问这台机器了，你可以把 IP 改成其他地址，只要不产生冲突就行。</p><h3 id="public-network"><a href="#public-network" class="headerlink" title="public_network"></a>public_network</h3><p>事实上，这种模式，在配合VirtualBox使用的时候，会创建一个eth1网卡桥接，然后默认网卡依然是那张eth0。<br>所以，很多时候，我们要自己设置一下默认网卡，比如我们可以在Vagrantfile中添加类似于这么一行：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cat &lt;&lt;EOF &gt;&gt; &#x2F;etc&#x2F;sysconfig&#x2F;network</span><br><span class="line">GATEWAYDEV&#x3D;eth1</span><br><span class="line">EOF</span><br></pre></td></tr></table></figure><h2 id="Vagrantfile"><a href="#Vagrantfile" class="headerlink" title="Vagrantfile"></a>Vagrantfile</h2><p>集成预安装<br>就是让你在初次运行 vagrant up 后，虚拟机创建过程众自动运行的初始化命令。<br>打开 Vagrantfile 文件末尾处有下面被注释的代码。<br>就是让你在初次运行 vagrant up 后，虚拟机创建过程众自动运行的初始化命令。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">config.vm.provision &quot;shell&quot;, inline: &lt;&lt;-SHELL</span><br><span class="line">   apt-get update</span><br><span class="line">   apt-get install -y apache2</span><br><span class="line">SHELL</span><br></pre></td></tr></table></figure><p>如果你不是初次运行，同时又修改了这里的命令，想让系统再次运行这里面的命令，你可以使用 vagrant reload –provision 进行重载。</p><p>所以在这种情况下，你只要将 Vagrantfile 共享给团队的其他成员就可以了。</p><p>你还可以把要运行的命令单独写在一个文件里存放在相同的目录下，比如 bootstrap.sh：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">#!&#x2F;usr&#x2F;bin&#x2F;env bash</span><br><span class="line"></span><br><span class="line">apt-get update</span><br><span class="line">apt-get install -y apache2</span><br><span class="line">if ! [ -L &#x2F;var&#x2F;www ]; then</span><br><span class="line">  rm -rf &#x2F;var&#x2F;www</span><br><span class="line">  ln -fs &#x2F;vagrant &#x2F;var&#x2F;www</span><br><span class="line">fi</span><br></pre></td></tr></table></figure><p>然后在 Vagrantfile 里这样添加：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Vagrant.configure(&quot;2&quot;) do |config|</span><br><span class="line">  config.vm.box &#x3D; &quot;hashicorp&#x2F;precise64&quot;</span><br><span class="line">  ...</span><br><span class="line"></span><br><span class="line">  config.vm.provision &quot;shell&quot;, path: &quot;bootstrap.sh&quot;  # 添加这行</span><br><span class="line">end</span><br></pre></td></tr></table></figure><p>效果和直接写在 Vagrantfile 是一样的。</p><p>注意事项<br>使用 Apache/Nginx 时会出现诸如图片修改后但页面刷新仍然是旧文件的情况，是由于静态文件缓存造成的。需要对虚拟机里的 Apache/Nginx 配置文件进行修改：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># Apache 配置（httpd.conf 或者 apache.conf）添加：</span><br><span class="line">EnableSendfile off</span><br><span class="line"></span><br><span class="line"># Nginx 配置（nginx.conf）添加：</span><br><span class="line">sendfile off;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> Code </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Vagrant </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>ToThePoint--Docker</title>
+      <link href="/2018/11/01/"/>
+      <url>/2018/11/01/</url>
+      
+        <content type="html"><![CDATA[<p>备忘，高手勿喷</p><a id="more"></a><h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p><a href="http://www.runoob.com/docker/centos-docker-install.html" target="_blank" rel="noopener">http://www.runoob.com/docker/centos-docker-install.html</a></p><blockquote><p>如果可以，尽量使用DokcerId登陆，而不是注册邮箱。<br>因为邮箱和DockerID是两个分离的东西，而使用邮箱会出现问题。</p></blockquote><h1 id="从一个例子来演示使用"><a href="#从一个例子来演示使用" class="headerlink" title="从一个例子来演示使用"></a>从一个例子来演示使用</h1><p>eg：LAMP</p><h2 id="安装CentOS"><a href="#安装CentOS" class="headerlink" title="安装CentOS"></a>安装CentOS</h2><h3 id="Option-如果没有目标image，那么我们就先创建一个"><a href="#Option-如果没有目标image，那么我们就先创建一个" class="headerlink" title="Option: 如果没有目标image，那么我们就先创建一个"></a>Option: 如果没有目标image，那么我们就先创建一个</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 这样安装的centos版本是的latest</span><br><span class="line">docker pull centos</span><br><span class="line"></span><br><span class="line"># 指定版本:centos 7 版本</span><br><span class="line">docker pull centos:7</span><br></pre></td></tr></table></figure><h3 id="根据已有的image创建一个container并开放端口"><a href="#根据已有的image创建一个container并开放端口" class="headerlink" title="根据已有的image创建一个container并开放端口"></a>根据已有的image创建一个container并开放端口</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run --name lamp --privileged&#x3D;true -itd -p 80:80 -p 443:443 -p 3306:3306 -v D:&#x2F;PhpstormProjects:&#x2F;var&#x2F;www&#x2F;html &lt;image id&gt; &#x2F;usr&#x2F;sbin&#x2F;init</span><br></pre></td></tr></table></figure><table><thead><tr><th>参数</th><th>说明</th></tr></thead><tbody><tr><td>-p</td><td>将本地端口映射到容器端口</td></tr><tr><td>-P</td><td>将同期内部使用的网络端口映射到我们的使用的主机上</td></tr><tr><td>-v</td><td>将本地的 文件夹映射到服务器Apache默认的网站目录下</td></tr><tr><td>-i</td><td>同步输入，允许你对容器的标准输入（STDIN）进行交互</td></tr><tr><td>-t</td><td>在容器内指定一个终端或者伪终端，同步输出</td></tr><tr><td>-d</td><td>后台运行，exit之后可以通过 attach 和 exec 再次进去容器</td></tr><tr><td>–privileged=true</td><td>特权模式</td></tr></tbody></table><h3 id="进入容器"><a href="#进入容器" class="headerlink" title="进入容器"></a>进入容器</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker attach -i -t &lt;container id&gt; &#x2F;bin&#x2F;bash</span><br><span class="line">docker exec -i -t &lt;container id&gt; &#x2F;bin&#x2F;bash</span><br></pre></td></tr></table></figure><p>eg:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker exec -it lamp &#x2F;bin&#x2F;bash</span><br></pre></td></tr></table></figure><h1 id="使用-commit-命令将容器再次封装保存成images"><a href="#使用-commit-命令将容器再次封装保存成images" class="headerlink" title="使用 commit 命令将容器再次封装保存成images"></a>使用 commit 命令将容器再次封装保存成images</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker commit -m &quot;description&quot; &lt;container ID&gt; new_name</span><br></pre></td></tr></table></figure><p>再次 docker images 就会发现刚刚提交的images出现在列表里面了</p><h2 id="将自己的镜像上传到hub-docker-com"><a href="#将自己的镜像上传到hub-docker-com" class="headerlink" title="将自己的镜像上传到hub.docker.com"></a>将自己的镜像上传到hub.docker.com</h2><p>首先到docker.com注册账号，新建一个 REPOSITORY</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">docker login # 登录docker</span><br><span class="line">docker tag &lt;images ID&gt; &lt;namespace&gt;&#x2F;&lt;image name&gt;:&lt;version tag eg latest&gt;</span><br><span class="line">docker push &lt;namsoace&gt;&#x2F;&lt;image name&gt; # 等待上传完了就好了</span><br><span class="line">&#96;</span><br></pre></td></tr></table></figure><h2 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h2><table><thead><tr><th>header 1</th><th>header 2</th></tr></thead><tbody><tr><td>docker images</td><td>查看已经下载的镜像</td></tr><tr><td>docker ps</td><td>查看在运行的容器</td></tr><tr><td>docker ps -a</td><td>查看全部运行的容器,包括运行中（Up）的和退出的(Exited)</td></tr><tr><td>docker rm</td><td>删除容器</td></tr><tr><td>docker rmi</td><td>删除镜像</td></tr><tr><td>docker create</td><td>创建一个容器但是不启动它</td></tr><tr><td>docker run</td><td>创建并启动一个容器</td></tr><tr><td>docker stop</td><td>停止容器运行，发送信号SIGTERM</td></tr><tr><td>docker start</td><td>启动一个停止状态的容器</td></tr><tr><td>docker restart</td><td>重启一个容器</td></tr><tr><td>docker kill</td><td>发送信号给容器，默认SIGKILL</td></tr><tr><td>docker attach</td><td>连接(进入)到一个正在运行的容器</td></tr><tr><td>docker wait</td><td>阻塞到一个容器，直到容器停止运行</td></tr><tr><td>docker inspect</td><td>深入容器内部获取容器所有信息</td></tr><tr><td>docker logs</td><td>查看容器的日志(stdout/stderr)</td></tr><tr><td>docker events</td><td>得到docker服务器的实时的事件</td></tr><tr><td>docker port</td><td>显示容器的端口映射</td></tr><tr><td>docker top</td><td>显示容器的进程信息</td></tr><tr><td>docker diff</td><td>显示容器文件系统的前后变化</td></tr></tbody></table>]]></content>
+      
+      
+      <categories>
+          
+          <category> Code </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Git </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Win10的一些总结</title>
+      <link href="/2018/10/15/"/>
+      <url>/2018/10/15/</url>
+      
+        <content type="html"><![CDATA[<p>个人使用总结</p><a id="more"></a><h4 id="win10卓越性能"><a href="#win10卓越性能" class="headerlink" title="win10卓越性能"></a>win10卓越性能</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">powercfg -duplicatescheme e9a42b02-d5df-448d-aa00-03f14749eb61</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> Windows </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Nas </tag>
+            
+            <tag> PC </tag>
+            
+            <tag> VPS </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>macOS的一些总结</title>
+      <link href="/2018/10/14/"/>
+      <url>/2018/10/14/</url>
+      
+        <content type="html"><![CDATA[<p>个人使用总结</p><a id="more"></a><h4 id="查看Mac电脑的具体CPU型号"><a href="#查看Mac电脑的具体CPU型号" class="headerlink" title="查看Mac电脑的具体CPU型号"></a>查看Mac电脑的具体CPU型号</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sysctl machdep.cpu.brand_string</span><br></pre></td></tr></table></figure><h4 id="开启任何来源来安装软件"><a href="#开启任何来源来安装软件" class="headerlink" title="开启任何来源来安装软件"></a>开启任何来源来安装软件</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo spctl --master-disable</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> macOS </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Mac </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>PC端 Wol 网络唤醒 Wake On Lan 设置</title>
+      <link href="/2018/07/19/"/>
+      <url>/2018/07/19/</url>
+      
+        <content type="html"><![CDATA[<p>PC端设置WakeOnLan教程。</p><a id="more"></a><h2 id="PC机"><a href="#PC机" class="headerlink" title="PC机"></a>PC机</h2><h3 id="主板设置"><a href="#主板设置" class="headerlink" title="主板设置"></a>主板设置</h3><h3 id="Windows系统设置"><a href="#Windows系统设置" class="headerlink" title="Windows系统设置"></a>Windows系统设置</h3>]]></content>
+      
+      
+      <categories>
+          
+          <category> 默认分类 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Nas </tag>
+            
+            <tag> PC </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>java JDK安装与环境变量配置</title>
+      <link href="/2018/05/22/"/>
+      <url>/2018/05/22/</url>
+      
+        <content type="html"><![CDATA[<p>备忘，高手勿喷</p><a id="more"></a><h2 id="Java-SE-Development-Kit-Downloads"><a href="#Java-SE-Development-Kit-Downloads" class="headerlink" title="==Java SE Development Kit Downloads=="></a>==Java SE Development Kit Downloads==</h2><p><a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html" target="_blank" rel="noopener">http://www.oracle.com/technetwork/java/javase/downloads/index.html</a></p><h2 id="Windows版本"><a href="#Windows版本" class="headerlink" title="==Windows版本=="></a>==Windows版本==</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">JAVA_HOME</span><br><span class="line">C:\Program Files\Java\jdk-11.0.2</span><br><span class="line"></span><br><span class="line">PATH</span><br><span class="line"></span><br><span class="line">;%JAVA_HOME%\bin</span><br><span class="line"></span><br><span class="line">CLASSPATH</span><br><span class="line">.;%JAVA_HOME%\lib</span><br></pre></td></tr></table></figure><h2 id="Ubuntu版本"><a href="#Ubuntu版本" class="headerlink" title="==Ubuntu版本=="></a>==Ubuntu版本==</h2><h3 id="1-创建Java的目标路径文件夹"><a href="#1-创建Java的目标路径文件夹" class="headerlink" title="1. 创建Java的目标路径文件夹"></a>1. 创建Java的目标路径文件夹</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo mkdir &#x2F;usr&#x2F;lib&#x2F;jvm</span><br></pre></td></tr></table></figure><h3 id="2-解压jdk压缩文件"><a href="#2-解压jdk压缩文件" class="headerlink" title="2. 解压jdk压缩文件"></a>2. 解压jdk压缩文件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo tar -C &#x2F;usr&#x2F;lib&#x2F;jvm -xzf jdk-11.0.2_linux-x64_bin.tar.gz</span><br></pre></td></tr></table></figure><h3 id="3-查看本机上是否还有java可选。"><a href="#3-查看本机上是否还有java可选。" class="headerlink" title="3. 查看本机上是否还有java可选。"></a>3. 查看本机上是否还有java可选。</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">update-alternatives --list java</span><br></pre></td></tr></table></figure><p>如果出现错误，系统中没有java可选，我们可以进行以下步骤</p><h3 id="4-配置环境变量命令："><a href="#4-配置环境变量命令：" class="headerlink" title="4. 配置环境变量命令："></a>4. 配置环境变量命令：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim ~&#x2F;.bashrc</span><br></pre></td></tr></table></figure><p>添加以下代码：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">export JAVA_HOME&#x3D;&#x2F;usr&#x2F;lib&#x2F;jvm&#x2F;jdk-11.0.2</span><br><span class="line">export JRE_HOME&#x3D;$&#123;JAVA_HOME&#125;&#x2F;jre  </span><br><span class="line">export CLASSPATH&#x3D;.:$&#123;JAVA_HOME&#125;&#x2F;lib:$&#123;JRE_HOME&#125;&#x2F;lib  </span><br><span class="line">export PATH&#x3D;$PATH:$&#123;JAVA_HOME&#125;&#x2F;bin</span><br></pre></td></tr></table></figure><p>添加以下代码：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">export JAVA_HOME&#x3D;&#x2F;usr&#x2F;lib&#x2F;jvm&#x2F;jdk-11.0.2</span><br><span class="line">export CLASSPATH&#x3D;.:$&#123;JAVA_HOME&#125;&#x2F;lib</span><br><span class="line">export PATH&#x3D;$PATH:$&#123;JAVA_HOME&#125;&#x2F;bin</span><br></pre></td></tr></table></figure><h3 id="5-使环境变量马上生效"><a href="#5-使环境变量马上生效" class="headerlink" title="5. 使环境变量马上生效"></a>5. 使环境变量马上生效</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source ~&#x2F;.bashrc</span><br></pre></td></tr></table></figure><p>然后就是要告诉ubuntu系统，我们使用的sun的JDK，而非OpenJDK了：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo update-alternatives --install &#x2F;usr&#x2F;bin&#x2F;java java &#x2F;usr&#x2F;lib&#x2F;jvm&#x2F;jdk-11.0.2&#x2F;bin&#x2F;java 300</span><br></pre></td></tr></table></figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo update-alternatives --install &#x2F;usr&#x2F;bin&#x2F;javac javac &#x2F;usr&#x2F;lib&#x2F;jvm&#x2F;jdk-11.0.2&#x2F;bin&#x2F;javac 300</span><br></pre></td></tr></table></figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo update-alternatives --install &#x2F;usr&#x2F;bin&#x2F;jar jar &#x2F;usr&#x2F;lib&#x2F;jvm&#x2F;jdk-11.0.2&#x2F;bin&#x2F;jar 300</span><br></pre></td></tr></table></figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo update-alternatives --config java</span><br></pre></td></tr></table></figure><p>如果最后一步没有显示你有多个jdk，那么就无视他。到此结束配置。</p><p>有 2 个候选项可用于替换 java (提供 /usr/bin/java)。</p><h2 id="选择-nbsp-nbsp-路径-nbsp-nbsp-优先级-nbsp-nbsp-状态"><a href="#选择-nbsp-nbsp-路径-nbsp-nbsp-优先级-nbsp-nbsp-状态" class="headerlink" title="选择&nbsp;&nbsp;路径&nbsp;&nbsp;优先级&nbsp;&nbsp;状态"></a>选择&nbsp;&nbsp;路径&nbsp;&nbsp;优先级&nbsp;&nbsp;状态</h2><p>*0&nbsp;&nbsp;/usr/lib/jvm/java-6-openjdk/jre/bin/java   1061   自动模式</p><p>&nbsp;1&nbsp;&nbsp;/usr/lib/jvm/java-6-openjdk/jre/bin/java   1061   手动模式</p><p>&nbsp;2&nbsp;&nbsp;/usr/lib/jvm/jdk1.8.0_144/bin/java             300    </p><p>手动模式要维持当前值[*]请按回车键，或者键入选择的编号：？</p><h2 id="Cent-OS版本"><a href="#Cent-OS版本" class="headerlink" title="==Cent OS版本=="></a>==Cent OS版本==</h2><h3 id="创建Java的目标路径文件夹"><a href="#创建Java的目标路径文件夹" class="headerlink" title="创建Java的目标路径文件夹"></a>创建Java的目标路径文件夹</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir &#x2F;usr&#x2F;lib&#x2F;jvm</span><br></pre></td></tr></table></figure><h3 id="解压jdk压缩文件"><a href="#解压jdk压缩文件" class="headerlink" title="解压jdk压缩文件"></a>解压jdk压缩文件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -C &#x2F;usr&#x2F;lib&#x2F;jvm -xzf serverjre-11.0.2_linux-x64_bin.tar.gz</span><br></pre></td></tr></table></figure><h3 id="配置环境变量命令："><a href="#配置环境变量命令：" class="headerlink" title="配置环境变量命令："></a>配置环境变量命令：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim &#x2F;etc&#x2F;profile</span><br></pre></td></tr></table></figure><p>添加以下代码：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">export JAVA_HOME&#x3D;&#x2F;usr&#x2F;lib&#x2F;jvm&#x2F;jdk-11.0.2</span><br><span class="line">export CLASSPATH&#x3D;.:$&#123;JAVA_HOME&#125;&#x2F;lib</span><br><span class="line">export PATH&#x3D;$PATH:$&#123;JAVA_HOME&#125;&#x2F;bin</span><br></pre></td></tr></table></figure><h3 id="使环境变量马上生效"><a href="#使环境变量马上生效" class="headerlink" title="使环境变量马上生效"></a>使环境变量马上生效</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source &#x2F;etc&#x2F;profile</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 默认分类 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Java </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>apache整合tomato并实现ssl</title>
+      <link href="/2018/05/15/"/>
+      <url>/2018/05/15/</url>
+      
+        <content type="html"><![CDATA[<p>老规矩，废话不表，直接干。</p><a id="more"></a><table><thead><tr><th>名称</th><th>含义</th></tr></thead><tbody><tr><td>${Apache}</td><td>Apache的安装目录</td></tr><tr><td>${tomcat}</td><td>tomcat的安装目录</td></tr></tbody></table><h2 id="LAMP"><a href="#LAMP" class="headerlink" title="LAMP"></a>LAMP</h2><p>此步骤不再详述</p><h2 id="安装mod-jk"><a href="#安装mod-jk" class="headerlink" title="安装mod_jk"></a>安装mod_jk</h2><h3 id="windows"><a href="#windows" class="headerlink" title="windows"></a>windows</h3><p>下载地址：</p><p><a href="http://archive.apache.org/dist/tomcat/tomcat-connectors/jk/binaries/windows/" target="_blank" rel="noopener">http://archive.apache.org/dist/tomcat/tomcat-connectors/jk/binaries/windows/</a></p><p>复制到</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$&#123;Apache&#125;&#x2F;modules&#x2F;mod_jk.so</span><br></pre></td></tr></table></figure><p>加载：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">LoadModule jk_module modules&#x2F;mod_jk.so</span><br></pre></td></tr></table></figure><h3 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h3><p><a href="http://tomcat.apache.org/download-connectors.cgi" target="_blank" rel="noopener">http://tomcat.apache.org/download-connectors.cgi</a></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget http:&#x2F;&#x2F;mirrors.hust.edu.cn&#x2F;apache&#x2F;tomcat&#x2F;tomcat-connectors&#x2F;jk&#x2F;tomcat-connectors-1.2.43-src.tar.gz</span><br></pre></td></tr></table></figure><h4 id="安装依赖"><a href="#安装依赖" class="headerlink" title="安装依赖"></a>安装依赖</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yum -y install autoconf libtool apr-util-devel httpd-devel</span><br></pre></td></tr></table></figure><h4 id="进入native"><a href="#进入native" class="headerlink" title="进入native"></a>进入native</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.&#x2F;buildconf.sh</span><br><span class="line">.&#x2F;configure  --with-apxs&#x3D;&#x2F;usr&#x2F;bin&#x2F;apxs</span><br><span class="line">sudo make &amp;&amp; make install</span><br></pre></td></tr></table></figure><h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><h3 id="新建workers-properties配置文件"><a href="#新建workers-properties配置文件" class="headerlink" title="新建workers.properties配置文件"></a>新建workers.properties配置文件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">touch $&#123;Apache&#125;&#x2F;conf&#x2F;workers.properties</span><br></pre></td></tr></table></figure><h3 id="编辑workers-properties配置文件"><a href="#编辑workers-properties配置文件" class="headerlink" title="编辑workers.properties配置文件"></a>编辑workers.properties配置文件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">worker.list&#x3D;one</span><br><span class="line"></span><br><span class="line">worker.one.port&#x3D;8009</span><br><span class="line">worker.one.host&#x3D;localhost</span><br><span class="line">worker.one.type&#x3D;ajp13</span><br></pre></td></tr></table></figure><blockquote><p>8009端口为tomcat的默认ajp13端口，可以在${tomcat}/conf/server.xml的“protocol=”AJP/1.3””查看</p></blockquote><h3 id="配置apache加载workers-properties配置文件"><a href="#配置apache加载workers-properties配置文件" class="headerlink" title="配置apache加载workers.properties配置文件"></a>配置apache加载workers.properties配置文件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">JKWorkersFile conf&#x2F;workers.properties</span><br><span class="line">JkLogFile logs&#x2F;mod_jk.log</span><br></pre></td></tr></table></figure><h3 id="为Apche新建虚拟机"><a href="#为Apche新建虚拟机" class="headerlink" title="为Apche新建虚拟机"></a>为Apche新建虚拟机</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">&lt;VirtualHost *:80&gt;</span><br><span class="line">    ServerName www.test.com</span><br><span class="line">    &lt;IfModule mod_rewrite.c&gt;</span><br><span class="line">RewriteEngine On</span><br><span class="line">RewriteRule ^(.*)$ https:&#x2F;&#x2F;www.test.com$1 [R&#x3D;301,L]</span><br><span class="line">&lt;&#x2F;IfModule&gt;</span><br><span class="line">&lt;&#x2F;VirtualHost&gt;</span><br><span class="line">&lt;VirtualHost *:443&gt;</span><br><span class="line"></span><br><span class="line">    SSLEngine on</span><br><span class="line">    # 添加 SSL 协议支持协议，去掉不安全的协议</span><br><span class="line">    SSLProtocol all -SSLv2 -SSLv3</span><br><span class="line">    # 修改加密套件如下</span><br><span class="line">    SSLCipherSuite HIGH:!RC4:!MD5:!aNULL:!eNULL:!NULL:!DH:!EDH:!EXP:+MEDIUM</span><br><span class="line">    SSLHonorCipherOrder on</span><br><span class="line">    # 证书公钥配置</span><br><span class="line">    SSLCertificateFile &#x2F;etc&#x2F;httpd&#x2F;cert&#x2F;www.test.com&#x2F;apache&#x2F;public.pem</span><br><span class="line">    # 证书私钥配置</span><br><span class="line">    SSLCertificateKeyFile &#x2F;etc&#x2F;httpd&#x2F;cert&#x2F;www.test.com&#x2F;apache&#x2F;123456789.key</span><br><span class="line">    # 证书链配置，如果该属性开头有 &#39;#&#39;字符，请删除掉</span><br><span class="line">    SSLCertificateChainFile &#x2F;etc&#x2F;httpd&#x2F;cert&#x2F;www.test.com&#x2F;apache&#x2F;chain.pem</span><br><span class="line"></span><br><span class="line">    ServerName www.test.com</span><br><span class="line">    </span><br><span class="line">    JkMount &#x2F;* one</span><br><span class="line">&lt;&#x2F;VirtualHost&gt;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 默认分类 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+            <tag> PC </tag>
+            
+            <tag> VPS </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>利用内存空间制作RamDisk，用作浏览器缓存盘</title>
+      <link href="/2018/04/30/"/>
+      <url>/2018/04/30/</url>
+      
+        <content type="html"><![CDATA[<p>内存虚拟为本地磁盘</p><a id="more"></a><h1 id="下载："><a href="#下载：" class="headerlink" title="下载："></a>下载：</h1><p><a href="/git-static/software/QSoft.RAMDisk.v5.3.2.14.Enterprise.WinALL.x86.x64.zip">QSoft.RAMDisk.v5.3.2.14</a></p><h2 id="火狐"><a href="#火狐" class="headerlink" title="火狐"></a>火狐</h2><h3 id="查看火狐浏览器的当前的缓存路径："><a href="#查看火狐浏览器的当前的缓存路径：" class="headerlink" title="查看火狐浏览器的当前的缓存路径："></a>查看火狐浏览器的当前的缓存路径：</h3><p>在Firefox地址栏中输入</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">about:cache</span><br></pre></td></tr></table></figure><p>并键入回车，可以看到当前Firefox的内存缓冲位置与磁盘高速缓存位置。继续单击该页面上的“List Cache Entries”链接，可以进一步查看缓冲区中有哪些数据文件，并可以查看这些数据信息的具体属性。</p><h3 id="设置磁盘缓存目录放入其他目录："><a href="#设置磁盘缓存目录放入其他目录：" class="headerlink" title="设置磁盘缓存目录放入其他目录："></a>设置磁盘缓存目录放入其他目录：</h3><p>地址栏输入</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">about:config</span><br></pre></td></tr></table></figure><p>右键新建两个字符串。<br>一个名为： </p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">browser.cache.disk.parent_directory</span><br></pre></td></tr></table></figure><p>（硬盘缓存），然后输入新的缓存文件存储路径；<br>另一个名为：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">browser.cache.offline.parent_directory</span><br></pre></td></tr></table></figure><p>（脱机缓存），然后输入新的脱机缓存文件的路径，</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">R:\Firefox</span><br></pre></td></tr></table></figure><p>一 般情况下，硬盘文件缓存路径和脱机缓存路径可以保持一致。</p><p>设置后缓存路径之后，还需要再进行检查 browser.cache.disk.enable和browser.cache.offline.enable两个字符串的值必须为 true 才可以保障设置的缓存路径有效。</p><p>以上设置好了之后，可以在地址栏输入 about:cache，可以看到缓存目录已经改变了，这样就可以不必担心缓存文件过大而影响系统运行效率了。</p><p>另外，改变Firefox的配置文件目录有时也可以修改放在一个比较可靠的位置，而避免Firefox的设置被无意中删除掉，如放在Firefox的安装目录等，具体设置可以按照下面的操作：</p><p>在关闭firefox的情况下运行</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">firefox -p</span><br></pre></td></tr></table></figure><p>打开配置工具，新建配置文件，选择目录。（可以删除原配置，不过如果不手动将原来的配置文件复制到新的目录，启动firefox后要重新配置。）</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Windows </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> PC </tag>
+            
+            <tag> RAM </tag>
+            
+            <tag> RamDisk </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>iPhone DFU刷机</title>
+      <link href="/2018/04/29/"/>
+      <url>/2018/04/29/</url>
+      
+        <content type="html"><![CDATA[<p>关于DFU刷机模式的记录</p><a id="more"></a><h1 id="DFU模式刷机步骤"><a href="#DFU模式刷机步骤" class="headerlink" title="DFU模式刷机步骤"></a>DFU模式刷机步骤</h1><h2 id="1-下载并安装iTunes"><a href="#1-下载并安装iTunes" class="headerlink" title="1. 下载并安装iTunes"></a>1. 下载并安装iTunes</h2><p><a href="https://www.apple.com/cn/itunes/download/" target="_blank" rel="noopener">https://www.apple.com/cn/itunes/download/</a></p><h2 id="2-下载固件："><a href="#2-下载固件：" class="headerlink" title="2. 下载固件："></a>2. 下载固件：</h2><p><a href="http://act.feng.com/wetools/index.php?r=iosRom/index" target="_blank" rel="noopener">http://act.feng.com/wetools/index.php?r=iosRom/index</a></p><h2 id="3-iPhone进入DFU模式"><a href="#3-iPhone进入DFU模式" class="headerlink" title="3. iPhone进入DFU模式"></a>3. iPhone进入DFU模式</h2><ol><li>关机</li><li>按住开机键大约2-3秒，出现苹果logo，和刚开机看到的一样（白底黑logo）</li><li>出现上述画面后，再按住Home键，大约8秒，开机键不用松开</li><li>当屏幕变成黑色的时候，松开开机键，继续按着Home键大约15秒。</li><li>手机黑屏，进入DFU。</li></ol><p>这时候，iTunes上就会出现【iTunes检测到一个处于恢复模式的iPhone】</p><h2 id="4-恢复iPhone"><a href="#4-恢复iPhone" class="headerlink" title="4. 恢复iPhone"></a>4. 恢复iPhone</h2><ol><li>按住键盘上的【shift】，鼠标点击【恢复iPhone】</li><li>选择刚才下载好的固件</li><li>点击【恢复】</li></ol><p>接下来就等待一段时间，一般是十多分钟</p><h1 id="如果你是iPhone7之流"><a href="#如果你是iPhone7之流" class="headerlink" title="如果你是iPhone7之流"></a>如果你是iPhone7之流</h1><h2 id="重启"><a href="#重启" class="headerlink" title="重启"></a>重启</h2><p>1.长按右侧的电源键</p><p>2.在按住电源键的同时，长按 iPhone 左侧的音量减键</p><p>3.一直按住两个按键直到屏幕黑屏，并持续按住两个按键，直到手机重启。</p><h2 id="DFU模式"><a href="#DFU模式" class="headerlink" title="DFU模式"></a>DFU模式</h2><p>./p </p><ol><li>长按设备右侧电源键 3 秒</li><li>在按住电源键的同时，长按 iPhone 左侧的音量减键</li><li>同时按住两个按键 10 秒（如果看到苹果logo，那就是长按的时间太长了，你需要重新开始）</li><li>松开电源键，但还需要按住音量减键大约 5 秒（如果看到插入 iTunes 的界面，则意味着长按的时间太长，你需要重新开始）</li><li>如果看到屏幕依然是黑屏，那么恭喜你，iPhone 7 现在已经处于 DFU 模式了。</li></ol><h1 id="ps-苹果刷机报错"><a href="#ps-苹果刷机报错" class="headerlink" title="ps 苹果刷机报错"></a>ps 苹果刷机报错</h1><table><thead><tr><th>header 1</th><th>header 2</th></tr></thead><tbody><tr><td>3049</td><td>CPU</td></tr><tr><td>4005</td><td>CPU</td></tr><tr><td>4013</td><td>CPU</td></tr><tr><td>4014</td><td>RAM</td></tr><tr><td>9</td><td>ROM</td></tr><tr><td>14</td><td>ROM</td></tr><tr><td>21</td><td>ROM</td></tr><tr><td>29</td><td>ROM</td></tr><tr><td>40</td><td>ROM</td></tr><tr><td>91</td><td>ROM</td></tr><tr><td>-1</td><td>基带</td></tr><tr><td>1</td><td>基带</td></tr><tr><td>2</td><td>基带</td></tr><tr><td>3</td><td>基带</td></tr><tr><td>27</td><td>基带</td></tr><tr><td>31</td><td>基带</td></tr><tr><td>3</td><td>码片</td></tr><tr><td>16</td><td>码片</td></tr><tr><td>27</td><td>码片</td></tr><tr><td>1669</td><td>码片</td></tr><tr><td>3004</td><td>电池网络</td></tr><tr><td>3194</td><td>固件不兼容</td></tr><tr><td>53</td><td>HOME键指纹</td></tr></tbody></table>]]></content>
+      
+      
+      <categories>
+          
+          <category> 默认分类 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> iPhone </tag>
+            
+            <tag> 刷机 </tag>
+            
+            <tag> 手机 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>ToThePoint--Git</title>
+      <link href="/2018/04/06/"/>
+      <url>/2018/04/06/</url>
+      
+        <content type="html"><![CDATA[<p>备忘，高手勿喷</p><a id="more"></a><h1 id="作为客户端的简单使用"><a href="#作为客户端的简单使用" class="headerlink" title="作为客户端的简单使用"></a>作为客户端的简单使用</h1><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><h3 id="1-下载"><a href="#1-下载" class="headerlink" title="1. 下载"></a>1. 下载</h3><p>Windwos:<a href="https://git-scm.com/downloads" target="_blank" rel="noopener">https://git-scm.com/downloads</a><br>Linux:不叙</p><h3 id="2-生成密钥"><a href="#2-生成密钥" class="headerlink" title="2. 生成密钥"></a>2. 生成密钥</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;2260413@qq.com&quot;</span><br></pre></td></tr></table></figure><blockquote><p>id_rsa是私钥，不能泄露出去，id_rsa.pub是公钥，可以放心地告诉任何人，比如添加到你的git服务器上。<br>ps:引号里面换成你个人的信息，这个不需要解释了吧？</p></blockquote><h3 id="3-配置账户信息"><a href="#3-配置账户信息" class="headerlink" title="3. 配置账户信息"></a>3. 配置账户信息</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;ruibty&quot;</span><br><span class="line">git config --global user.email &quot;2260413@qq.com&quot;</span><br></pre></td></tr></table></figure><blockquote><p>ps:引号里面换成你个人的信息，这个不需要解释了吧？</p></blockquote><h3 id="1-4使用"><a href="#1-4使用" class="headerlink" title="1.4使用"></a>1.4使用</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git clone git@192.168.8.34:&#x2F;data&#x2F;git&#x2F;learngit.git  ----克隆</span><br><span class="line">git add . 或者 git add www&#x2F;js&#x2F;a.js　　------添加(所有改动文件&#x2F;具体某个文件)到暂存区</span><br><span class="line">git commit -m &#39;修改xxxbug&#39;　　　　　------描述并提交到本地当前分支</span><br><span class="line">git push　　　　　　 ------提交到服务器</span><br></pre></td></tr></table></figure><h3 id="1-5-已有项目？"><a href="#1-5-已有项目？" class="headerlink" title="1.5 已有项目？"></a>1.5 已有项目？</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd existing_git_repo</span><br><span class="line">git remote add origin git@gitee.com:ruibty&#x2F;ruibty.git</span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure><h1 id="技巧"><a href="#技巧" class="headerlink" title="技巧"></a>技巧</h1><h2 id="远程仓库的管理"><a href="#远程仓库的管理" class="headerlink" title="远程仓库的管理"></a>远程仓库的管理</h2><h3 id="查看远程仓库的明细，列出所有仓库"><a href="#查看远程仓库的明细，列出所有仓库" class="headerlink" title="查看远程仓库的明细，列出所有仓库"></a>查看远程仓库的明细，列出所有仓库</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote -v</span><br></pre></td></tr></table></figure><p>返回类似：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">gitee    git@gitee.com:ruibty&#x2F;ruibty.git (fetch)</span><br><span class="line">gitee    git@gitee.com:ruibty&#x2F;ruibty.git (push)</span><br></pre></td></tr></table></figure><h3 id="删除某远程仓库"><a href="#删除某远程仓库" class="headerlink" title="删除某远程仓库"></a>删除某远程仓库</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote rm gitee</span><br></pre></td></tr></table></figure><h3 id="将项目提交到多个git仓库-github和gitee"><a href="#将项目提交到多个git仓库-github和gitee" class="headerlink" title="将项目提交到多个git仓库(github和gitee)"></a>将项目提交到多个git仓库(github和gitee)</h3><p>在一个项目中添加多个地址（推荐）</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote set-url --add origin git@gitee.com:ruibty&#x2F;ruibty.git</span><br></pre></td></tr></table></figure><h1 id="搭建Git服务器"><a href="#搭建Git服务器" class="headerlink" title="搭建Git服务器"></a>搭建Git服务器</h1><p>以CentOS为例</p><h3 id="2-1-安装Git"><a href="#2-1-安装Git" class="headerlink" title="2.1 安装Git"></a>2.1 安装Git</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install -y git</span><br></pre></td></tr></table></figure><h3 id="2-2-创建用户"><a href="#2-2-创建用户" class="headerlink" title="2.2 创建用户"></a>2.2 创建用户</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adduser git</span><br></pre></td></tr></table></figure><h3 id="2-3-禁用git用户的shell登陆"><a href="#2-3-禁用git用户的shell登陆" class="headerlink" title="2.3 禁用git用户的shell登陆"></a>2.3 禁用git用户的shell登陆</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi &#x2F;etc&#x2F;passwd</span><br></pre></td></tr></table></figure><p>文件完成。找到类似下面的一行：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git:x:1001:1001:,,,:&#x2F;home&#x2F;git:&#x2F;bin&#x2F;bash</span><br></pre></td></tr></table></figure><p>最后一个冒号后改为：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git:x:1001:1001:,,,:&#x2F;home&#x2F;git:&#x2F;usr&#x2F;bin&#x2F;git-shell</span><br></pre></td></tr></table></figure><p>Git服务器打开RSA认证<br>RSA认证打开</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi &#x2F;etc&#x2F;ssh&#x2F;sshd_config</span><br></pre></td></tr></table></figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">RSAAuthentication yes     </span><br><span class="line">PubkeyAuthentication yes     </span><br><span class="line">AuthorizedKeysFile  .ssh&#x2F;authorized_keys</span><br></pre></td></tr></table></figure><p>重启sshd</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart sshd.server</span><br></pre></td></tr></table></figure><h3 id="2-4-初始化git仓库"><a href="#2-4-初始化git仓库" class="headerlink" title="2.4 初始化git仓库"></a>2.4 初始化git仓库</h3><p>这里我们选择/data/git/learngit.git来作为我们的git仓库</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git init --bare learngit.git</span><br></pre></td></tr></table></figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chown git:git learngit.git</span><br></pre></td></tr></table></figure><h3 id="2-5-创建git仓库"><a href="#2-5-创建git仓库" class="headerlink" title="2.5 创建git仓库"></a>2.5 创建git仓库</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">mkdir ruibty</span><br><span class="line">cd ruibty</span><br><span class="line">git init</span><br><span class="line">touch README.md</span><br><span class="line">git add README.md</span><br><span class="line">git commit -m &quot;first commit&quot;</span><br><span class="line">git remote add origin git@gitee.com:ruibty&#x2F;ruibty.git</span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure><p>然后就是像1.4一样使用了</p><h2 id="分支"><a href="#分支" class="headerlink" title="分支"></a>分支</h2><blockquote><p>建议修改的部分放到分支，修改完成后，回到源分支，然后合并新建分支代码</p></blockquote><h3 id="新建并提交分支"><a href="#新建并提交分支" class="headerlink" title="新建并提交分支"></a>新建并提交分支</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout -b &lt;branchName&gt;</span><br></pre></td></tr></table></figure><h3 id="提交分支"><a href="#提交分支" class="headerlink" title="提交分支"></a>提交分支</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push --set-upstream origin dev</span><br></pre></td></tr></table></figure><h3 id="分支合，去掉分支的冗余提交。即，将分支的多次提交一次性合并到主分支上。"><a href="#分支合，去掉分支的冗余提交。即，将分支的多次提交一次性合并到主分支上。" class="headerlink" title="分支合，去掉分支的冗余提交。即，将分支的多次提交一次性合并到主分支上。"></a>分支合，去掉分支的冗余提交。即，将分支的多次提交一次性合并到主分支上。</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git merge --squash &lt;branchName&gt;</span><br></pre></td></tr></table></figure><h3 id="查看远程分支"><a href="#查看远程分支" class="headerlink" title="查看远程分支"></a>查看远程分支</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch -a</span><br></pre></td></tr></table></figure><h3 id="删除远程分支"><a href="#删除远程分支" class="headerlink" title="删除远程分支"></a>删除远程分支</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin --delete &lt;branchName&gt;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> Code </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Git </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Linux系统开启BBR</title>
+      <link href="/2018/03/11/"/>
+      <url>/2018/03/11/</url>
+      
+        <content type="html"><![CDATA[<p>Linux kernel 4.9.x开始支持tcp_bbr</p><a id="more"></a><h2 id="查看当前内核"><a href="#查看当前内核" class="headerlink" title="查看当前内核"></a>查看当前内核</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">uname -a</span><br></pre></td></tr></table></figure><p>如有必要，自行升级，可参考<a href="/2018/02/03/">文档</a></p><h3 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">echo &quot;net.core.default_qdisc&#x3D;fq&quot; &gt;&gt; &#x2F;etc&#x2F;sysctl.conf</span><br><span class="line">echo &quot;net.ipv4.tcp_congestion_control&#x3D;bbr&quot; &gt;&gt; &#x2F;etc&#x2F;sysctl.conf</span><br></pre></td></tr></table></figure><h3 id="保存生效"><a href="#保存生效" class="headerlink" title="保存生效"></a>保存生效</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sysctl -p</span><br></pre></td></tr></table></figure><h3 id="分别查看可以用和现在使用的拥塞控制算法"><a href="#分别查看可以用和现在使用的拥塞控制算法" class="headerlink" title="分别查看可以用和现在使用的拥塞控制算法"></a>分别查看可以用和现在使用的拥塞控制算法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sysctl net.ipv4.tcp_available_congestion_control</span><br></pre></td></tr></table></figure><p>net.ipv4.tcp_available_congestion_control = bbr cubic reno</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sysctl net.ipv4.tcp_congestion_control</span><br></pre></td></tr></table></figure><p>net.ipv4.tcp_congestion_control = bbr</p><h3 id="执行下面的命令，看到有-tcp-bbr-模块即说明BBR已启动。"><a href="#执行下面的命令，看到有-tcp-bbr-模块即说明BBR已启动。" class="headerlink" title="执行下面的命令，看到有 tcp_bbr 模块即说明BBR已启动。"></a>执行下面的命令，看到有 tcp_bbr 模块即说明BBR已启动。</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lsmod | grep bbr</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 默认分类 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>VPS实现个人云主机</title>
+      <link href="/2018/02/04/"/>
+      <url>/2018/02/04/</url>
+      
+        <content type="html"><![CDATA[<p>资源为<a href="https://www.vultr.com/?ref=7236747" target="_blank" rel="noopener">vultr</a>上的一台VPS，目标在于实现个人用途的服务器</p><a id="more"></a><p>老规矩，废话不表，直接干。</p><h2 id="开启Root密匙登陆，关闭密码登陆"><a href="#开启Root密匙登陆，关闭密码登陆" class="headerlink" title="开启Root密匙登陆，关闭密码登陆"></a>开启Root密匙登陆，关闭密码登陆</h2><h2 id="升级内核"><a href="#升级内核" class="headerlink" title="升级内核"></a>升级内核</h2><h2 id="开启BBR"><a href="#开启BBR" class="headerlink" title="开启BBR"></a>开启BBR</h2><p>参见：</p><h2 id="安装LAMP"><a href="#安装LAMP" class="headerlink" title="安装LAMP"></a>安装LAMP</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install -y httpd mariadb</span><br></pre></td></tr></table></figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">yum -y install epel-release</span><br><span class="line">rpm -Uvh https:&#x2F;&#x2F;mirror.webtatic.com&#x2F;yum&#x2F;el7&#x2F;webtatic-release.rpm</span><br><span class="line">yum install -y php70w</span><br></pre></td></tr></table></figure><h2 id="搭建NextCloud"><a href="#搭建NextCloud" class="headerlink" title="搭建NextCloud"></a>搭建<a href="https://nextcloud.com/" target="_blank" rel="noopener">NextCloud</a></h2><h2 id="配置shadowsocks"><a href="#配置shadowsocks" class="headerlink" title="配置shadowsocks"></a>配置shadowsocks</h2>]]></content>
+      
+      
+      <categories>
+          
+          <category> 默认分类 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Nas </tag>
+            
+            <tag> PC </tag>
+            
+            <tag> VPS </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Linux升级内核</title>
+      <link href="/2018/02/03/"/>
+      <url>/2018/02/03/</url>
+      
+        <content type="html"><![CDATA[<p>资源为<a href="https://www.vultr.com/?ref=7236747" target="_blank" rel="noopener">vultr</a>上的一台VPS，目标在于实现个人用途的服务器</p><a id="more"></a><h2 id="Debian-Ubuntu"><a href="#Debian-Ubuntu" class="headerlink" title="Debian/Ubuntu"></a>Debian/Ubuntu</h2><p>最新内核查看这里：</p><p><a href="http://mirrors.kernel.org/debian/pool/main/l/linux/" target="_blank" rel="noopener">Debian Kernel</a> </p><p><a href="http://kernel.ubuntu.com/~kernel-ppa/mainline/" target="_blank" rel="noopener">Ubuntu Kernel</a></p><p>下载最新内核</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget http:&#x2F;&#x2F;kernel.ubuntu.com&#x2F;~kernel-ppa&#x2F;mainline&#x2F;v4.15&#x2F;linux-image-4.15.0-041500-generic_4.15.0-041500.201801282230_amd64.deb</span><br></pre></td></tr></table></figure><p>安装内核</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dpkg -i linux-image-4.15.*.deb</span><br></pre></td></tr></table></figure><p>删除其余内核或调整内核启动顺序</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">dpkg -l|grep linux-image </span><br><span class="line">apt-get purge 旧内核</span><br></pre></td></tr></table></figure><p>也可以不调整内核启动顺序，ubuntu 跟debian 都会默认4.15.x启动的。</p><p>更新 grub 系统引导文件并重启</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">update-grub</span><br><span class="line">reboot</span><br></pre></td></tr></table></figure><h2 id="CentOS"><a href="#CentOS" class="headerlink" title="CentOS"></a>CentOS</h2><p><a href="http://elrepo.org/tiki/tiki-index.php" target="_blank" rel="noopener">http://elrepo.org/tiki/tiki-index.php</a></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">rpm --import https:&#x2F;&#x2F;www.elrepo.org&#x2F;RPM-GPG-KEY-elrepo.org</span><br><span class="line">rpm -Uvh http:&#x2F;&#x2F;www.elrepo.org&#x2F;elrepo-release-7.0-3.el7.elrepo.noarch.rpm</span><br><span class="line">yum install yum-plugin-fastestmirror</span><br><span class="line">yum --enablerepo&#x3D;elrepo-kernel install kernel-ml</span><br><span class="line">grub2-set-default 0</span><br></pre></td></tr></table></figure><p>yum install -y ncurses-devel elfutils-libelf-devel bc # 安装需要的软件</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">截至至发稿日，[www.kernel.org](https:&#x2F;&#x2F;www.kernel.org&#x2F;)最新的Stable Kernal为4.15.1，于是有了一下命令：</span><br></pre></td></tr></table></figure><p>wget <a href="https://cdn.kernel.org/pub/linux/kernel/v4.x/linux-4.15.1.tar.xz" target="_blank" rel="noopener">https://cdn.kernel.org/pub/linux/kernel/v4.x/linux-4.15.1.tar.xz</a> –no-check-certificate    #下载内核，并忽略验证证书<br>tar -xvf linux-4.15.1.tar.xz    #解压内核<br>cd linux-4.15.1</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">如果是第一次编译内核则可以跳过不执行下面步骤。</span><br><span class="line">删除之前编译所生成的文件、配置文件和备份文件等。</span><br><span class="line">与之相似的命令还有 make clean、make distclean。</span><br><span class="line">删除范围是distclean &gt; mrproper &gt; clean。</span><br></pre></td></tr></table></figure><p>make mrproper</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">查看一下当前的内核</span><br></pre></td></tr></table></figure><p>uname -a</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">于是有了下面的命令，其他人请根据自己的环境自行修改。</span><br></pre></td></tr></table></figure><p>cp /boot/config-3.10.0-693.11.6.el7.x86_64 .config<br>sh -c ‘ y“” | make oldconfig’    #centos7中使用这个命令<br>make menuconfig #这里我用的是menuconfig，有图形化界面比较方便，这里界面弹出来之后直接exit就好。<br>make #编译内核，3.10的版本内核直接make就好了，老版本的内核可能要分别执行几个命令。这一步时间要比较久。<br>make modules<br>make modules_install<br>make install<br>[root@docker-dev linux-4.9.39]# awk -F&#39; ‘$1==”menuentry “ {print $2}’ /etc/grub2.cfg<br>[root@docker-dev linux-4.9.39]# grub2-set-default 0 &amp;&amp; init 6</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">完事重启，检查是否为新的内核</span><br></pre></td></tr></table></figure><p>uname -a</p><pre><code>centos 6.x是通过/etc/grub.conf就行内核启动顺序修改的，而且比较直观查看。但centos 7的系统和6就不一样了，是通过grub2为引导程序。下边简单说下centos 7的内核启动顺序如何修改。1，首先查看当前系统有几个内核。比如：cat /boot/grub2/grub.cfg |grep menuentry2，设置默认的启动内核，选择CentOS Linux (4.12.0-rc5)7 (Core)这个内核为默认启动。grub2-set-default &quot;CentOS Linux (3.10.0-327.el7.x86_64)7 (Core)验证是否修改成功：grub2-editenv list3，重启机器观察。重启成功以后查看下机器的内核是不是该内核：在虚拟机启动的时候出现多个内核引导项，选第一个进入系统进入系统后查看内核版本，成功升级成4.12</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Git </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>SublimeText3安装中文</title>
+      <link href="/2018/02/01/"/>
+      <url>/2018/02/01/</url>
+      
+        <content type="html"><![CDATA[<p>其实官方已经给出了答案。</p><a id="more"></a><p>官网链接：<a href="https://packagecontrol.io/installation" target="_blank" rel="noopener">https://packagecontrol.io/installation</a></p><p>在Sublime Text3中按下<strong>ctrl+`</strong>,</p><blockquote><p>注意，`是键盘1左边的那个键。</p></blockquote><p>在下面的命令行Ctrl+V粘贴，回车。</p><p>此时Package Control就装好了。</p><h2 id="安装ChineseLocalization"><a href="#安装ChineseLocalization" class="headerlink" title="安装ChineseLocalization"></a>安装ChineseLocalization</h2><ul><li>点击Preferences/Package Control，</li><li>然后点击Package Control：Install Package,（第一次运行可以要几秒钟，因为要下载Package Control里面存在的包”花名册”）</li><li>然后在弹出的命令界面，输入Chinese，选择ChineseLocalizations(回车或者鼠标单击)。</li><li>切换语言，帮助(H)/Language/简体中文，繁体中文，日本语，English。</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 默认分类 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> SublimeText </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>惠普HP 840 G2 UEFI方式安装LinuxMint系统</title>
+      <link href="/2018/01/22/"/>
+      <url>/2018/01/22/</url>
+      
+        <content type="html"><![CDATA[<p>新入手一款笔记本，型号为：惠普HP 840 G2。在安装LinuxMint的时候，uefi方式安装之后无法自动引导，手动引导又太麻烦…</p><a id="more"></a><blockquote><p>部分图片手机拍摄，画质渣，见谅。</p></blockquote><p>废话不多说，直接开始。</p><h2 id="升级Bios"><a href="#升级Bios" class="headerlink" title="升级Bios"></a>升级Bios</h2><p>在<a href="https://support.hp.com/cn-zh/drivers/selfservice/hp-elitebook-840-g2-notebook-pc/7343202" target="_blank" rel="noopener">惠普官方网站</a>找到840 G2最新的BIOS文件，升级过程不叙，都是非常简单的傻瓜式操作，按照提示一步一步来即可（以下操作皆为截止至发稿日惠普提供的最新Bios文件）。<br><img src="/git-static/images/2018/01/22/1.jpg" alt="image"><br>升级完成后的信息大概如下：<br><img src="/git-static/images/2018/01/22/2.jpg" alt="image"></p><h2 id="安装操作系统"><a href="#安装操作系统" class="headerlink" title="安装操作系统"></a>安装操作系统</h2><p>我使用了<a href="/git-static/software/UltraISO.zip">UltraISO</a>这个软件，制作了一个USB启动安装盘。<br><img src="/git-static/images/2018/01/22/3.png" alt="image"><br>安装过程也不再详叙。这个网上教程很多。<br><img src="/git-static/images/2018/01/22/4.jpg" alt="image"></p><h2 id="BISO设置启动项"><a href="#BISO设置启动项" class="headerlink" title="BISO设置启动项"></a>BISO设置启动项</h2><p>好像是LinuxMint并没有获得微软认证，所以她的安装过程，这个笔记本并不能自动添加“操作系统引导管理器”，所以要手动设置，这个才是问题的关键所在。</p><p>进入Bios，启动设置为如图所示：<br><img src="/git-static/images/2018/01/22/5.jpg" alt="image"></p><p>然后选择自定义引导，添加路径，我安装的是LinuxMint18.3这个操作系统，我的路径如图：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">\EFI\ubuntu\grubx64.efi</span><br></pre></td></tr></table></figure><p>根据版本更迭或者其他文件，请自行修改。<br><img src="/git-static/images/2018/01/22/6.jpg" alt="image"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Machine/机器 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 电脑 </tag>
+            
+            <tag> uefi </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Marvell 88SE9128 Pcie转SATA控制卡刷固件实现ACHI</title>
+      <link href="/2018/01/15/"/>
+      <url>/2018/01/15/</url>
+      
+        <content type="html"><![CDATA[<p>Marvell 88SE9128是一款流行度很高的pice转SATA控制卡，近日因扩展需要，购得微星转接卡一样，发现主控芯片正好为马牌pcie转SATA控制卡一张，但是默认固件中硬盘的工作方式为IDE，这怎么能忍？遂升级至新版固件，实现ACHI方式。</p><a id="more"></a><p>废话不多说，直接上链接：</p><p><a href="http://www.station-drivers.com/index.php?option=com_remository&amp;Itemid=353&amp;func=select&amp;id=347&amp;orderby=4&amp;lang=en" target="_blank" rel="noopener">http://www.station-drivers.com/index.php?option=com_remository&amp;Itemid=353&amp;func=select&amp;id=347&amp;orderby=4&amp;lang=en</a></p><p>老规矩，动手能力强的朋友可直接跳过我以下的啰嗦，上手DOS按照固件包内的说明升级即可。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 默认分类 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Nas </tag>
+            
+            <tag> 硬件 </tag>
+            
+            <tag> PC </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Windows10系统访问和使用共享</title>
+      <link href="/2018/01/14/"/>
+      <url>/2018/01/14/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>本文随时可能有改动，不断尝试改进。</p></blockquote><a id="more"></a><h2 id="Win10无法访问局域网内低版本系统创建的共享资源"><a href="#Win10无法访问局域网内低版本系统创建的共享资源" class="headerlink" title="Win10无法访问局域网内低版本系统创建的共享资源"></a>Win10无法访问局域网内低版本系统创建的共享资源</h2><p>如果你仅仅是为了解决问题，而并无兴趣了解具体原因，请尝试在Win10主机导入如下注册表；</p><p><a href="/git-static/regedit/AllowInsecureGuestAuth.reg">AllowInsecureGuestAuth.reg</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Windows </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Win10 </tag>
+            
+            <tag> 共享 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Linux 系统命令</title>
+      <link href="/2018/01/07/"/>
+      <url>/2018/01/07/</url>
+      
+        <content type="html"><![CDATA[<p>备忘，高手勿喷。</p><a id="more"></a><blockquote><p>本文随时可能有改动，不断尝试改进。</p></blockquote><p>apt 安装本地包</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo rpm -ivh linuxqq_1.0.1-b1-100_mips64el.rpm</span><br><span class="line">sudo dpkg -i linuxqq_1.0.1-b1-100_armhf.deb</span><br><span class="line">sudo apt install -y &#x2F;path&#x2F;to&#x2F;linuxqq_1.0.1-b1-100_amd64.deb</span><br><span class="line">sudo pacman -U linuxqq_1.0.1-ci-94_x86_64.pkg.tar.xz</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 默认分类 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 言论 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>言论 - 名言摘录</title>
+      <link href="/2018/01/06/"/>
+      <url>/2018/01/06/</url>
+      
+        <content type="html"><![CDATA[<p>记录见过的一些喜欢的句子。</p><a id="more"></a><blockquote><p>本文随时可能有改动，不断尝试改进。</p></blockquote><p>米开朗基罗：雕像本来就在石头里，我只是把不要的部分去掉</p><p>人并不是仅仅在于寻求结果，如果只是为了寻求结果，人很容易走捷径的，在走捷径的过程中，人会很容易迷失真实，甚至连满腔的热忱也会逐渐丧失，我认为真正重要的是追求真实的意志。只要有了这种向真实前进的意志，即使这次失败了，我们也终于会达到终点。</p><p>就好像球赛，好的球员要紧盯的是球场上的对手，而不是比分牌。</p><p>微微风簇浪，散作满河星。</p><p>莫畏浮云遮望眼，风物长宜放眼量。</p><p>人的一切痛苦，本质上都是对自己无能的愤怒。</p><p>人与人最小的差别是智商，最大的差别是坚持。</p><p>没有行动的梦想，那是妄想</p><p>如果能控制粗鄙的狂喜，就不会有深入骨髓的悲伤。</p><p>有这么一种事儿，它在iPhone上叫越狱，在Android上叫Root，在Symbian上叫免签，在Web入侵时叫提权，在生活里，它叫表白……名字和领域不同，但是道理惊人地相似：之前举步维艰，之后为所欲为。</p><p>智慧就是适应变化的能力。</p><p>有时候，“虚惊一场”这四个字是人世间最美好的成语，比起什么兴高采烈，五彩缤纷，一帆风顺都要美好百倍。你可懂什么叫失去。这些时间来，更觉如此。愿悲伤恐惧能够过去，事外之人更懂珍惜。</p><p>无耻是无耻者的通行证，高尚是高尚者的墓志铭。</p><p>理论一套一套，放之于纸上熠熠生辉，放之于实际则可能一败涂地。</p><p>一个傻瓜提出来的问题，十个聪明人也回答不上来。</p><p>问题解决不了，就解决提出问题的人。</p><p>去还是不去，去；<br>买还是不买，不买；<br>说还是不说，不说。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 默认分类 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 言论 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Windows上的SSD缓存 -ExpressCache</title>
+      <link href="/2018/01/04/"/>
+      <url>/2018/01/04/</url>
+      
+        <content type="html"><![CDATA[<p>ExpressCache源自<a href="http://www.condusiv.com/" target="_blank" rel="noopener">condusiv</a>公司的<a href="http://www.condusiv.com/evaluation-software/" target="_blank" rel="noopener">Diskeeper</a>产品</p><p>这个软件可以使用SSD来为HDD提供缓存，一方面，延长了HDD的寿命，另外一方面，也提升了HDD的响应速度。</p><a id="more"></a><h1 id="以下所有操作均需要管理员权限"><a href="#以下所有操作均需要管理员权限" class="headerlink" title="以下所有操作均需要管理员权限"></a>以下所有操作均需要管理员权限</h1><h2 id="使用说明："><a href="#使用说明：" class="headerlink" title="使用说明："></a>使用说明：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">USAGE:</span><br><span class="line"></span><br><span class="line"> ECCmd [-NOLOGO]</span><br><span class="line">       [-INFO | -PARTITION | -FORMAT]</span><br><span class="line"></span><br><span class="line"> -NOLOGO              - No copyright message will be displayed.</span><br><span class="line"> -INFO                - Display ExpressCache activity information.</span><br><span class="line"> -PARTITION           - Create an ExpressCache partition.</span><br><span class="line">         [DriveId]    - Optional drive ID</span><br><span class="line">         [PartSize]   - Optional partition size in MB</span><br><span class="line"> -FORMAT              - Format the cache volume.</span><br></pre></td></tr></table></figure><h2 id="安装步骤"><a href="#安装步骤" class="headerlink" title="安装步骤"></a>安装步骤</h2><ol><li><p>准备要用来做cache的SSD<br>清空一个完整的SSD或者删除某SSD的一个分区都可以</p></li><li><p>下载对应的版本</p></li></ol><table><thead><tr><th>版本名称</th><th>地址</th></tr></thead><tbody><tr><td>联想（推荐）</td><td><a href="https://pcsupport.lenovo.com/us/zh/products/laptops-and-netbooks/thinkpad-t-series-laptops/thinkpad-t440s/downloads/DS104444" target="_blank" rel="noopener">https://pcsupport.lenovo.com/us/zh/products/laptops-and-netbooks/thinkpad-t-series-laptops/thinkpad-t440s/downloads/DS104444</a></td></tr><tr><td>华硕</td><td><a href="http://driver.zol.com.cn/detail/45/444953.shtml" target="_blank" rel="noopener">http://driver.zol.com.cn/detail/45/444953.shtml</a></td></tr><tr><td>Sandisk</td><td><a href="http://mp3support.sandisk.com/ReadyCache/ExpressCacheSetup.exe" target="_blank" rel="noopener">http://mp3support.sandisk.com/ReadyCache/ExpressCacheSetup.exe</a></td></tr><tr><td>三星</td><td></td></tr><tr><td>acer</td><td></td></tr></tbody></table><ol start="3"><li>安装完先不要重启，如果非允许的设备，先破解。</li></ol><table><thead><tr><th>破解方法</th><th>引用地址</th><th>备用下载地址</th></tr></thead><tbody><tr><td>方法1</td><td><a href="http://www.sdbeta.com/xiazai/2015/0609/35806.html" target="_blank" rel="noopener">http://www.sdbeta.com/xiazai/2015/0609/35806.html</a></td><td></td></tr><tr><td>方法2（推荐）</td><td><a href="http://lxf.me/432" target="_blank" rel="noopener">http://lxf.me/432</a></td><td><a href="/git-static/software/expresscache/ECPatch.zip">Ruibty’s Blog</a></td></tr></tbody></table><p><img src="/images/eccmdinfo.png" alt="image"></p><ol start="4"><li>如果对分区大小不满意，删除，然后<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ECCMD -PARTITION 1 119000 (意思是建立分区 在第一个磁盘上 开一个  119000M的分区）</span><br></pre></td></tr></table></figure></li></ol><h2 id="常见命令"><a href="#常见命令" class="headerlink" title="常见命令"></a>常见命令</h2><table><thead><tr><th>命令</th><th>说明</th></tr></thead><tbody><tr><td>ECCmd -INFO</td><td>查看状态外</td></tr><tr><td>ECCmd -EXCLUDE C</td><td>C盘不做缓存</td></tr><tr><td>ECCmd -CLEAREXCLUSIONS</td><td>取消缓存排除</td></tr><tr><td>ECCmd -FORMAT</td><td>初始化缓存，也就是清空SSD里的缓存</td></tr></tbody></table><p>快速安装Intel Rapid Start Technology和Expresscache软件<br><a href="http://think.lenovo.com.cn/htmls/knowledge/detail_20131128123732489.html" target="_blank" rel="noopener">http://think.lenovo.com.cn/htmls/knowledge/detail_20131128123732489.html</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Windows </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> ExpressCache </tag>
+            
+            <tag> 缓存 </tag>
+            
+            <tag> NAS </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+  
+  
+</search>
